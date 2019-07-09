@@ -1,0 +1,6 @@
+<nav search_view="search" color="#65A637">
+  <view name="search" default='true' />
+    <view name="ensemble_accounts" />
+    <view name="trumpet" />
+    <view name="templates" />
+</nav>
