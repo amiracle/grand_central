@@ -1,6 +1,8 @@
 <nav search_view="search" color="#65A637">
-  <view name="search" default='true' />
+  <view name="search" />
+  <view name="cloud_account_status" default='true' />
     <view name="ensemble_accounts" />
     <view name="trumpet" />
     <view name="templates" />
+  <view name="cost_path" />
 </nav>

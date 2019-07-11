@@ -1,0 +1,38 @@
+<dashboard>
+  <label>Cloud Account Status</label>
+  <row>
+    <panel>
+      <title>Account Status</title>
+      <table>
+        <search>
+          <query>| inputlookup append=t aws_org_accounts | eval days=round((now()-JoinedTimestamp)/86400,1) | table days id arn JoinedMethod email name status</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">20</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">false</option>
+        <option name="wrap">true</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Data Collection</title>
+        <search>
+          <query>[| inputlookup append=t aws_org_accounts | table id] sourcetype=aws:* | stats count(sourcetype) by account_id</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="count">10</option>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

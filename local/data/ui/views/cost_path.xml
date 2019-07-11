@@ -1,0 +1,83 @@
+<form>
+  <label>Cost Path</label>
+  <description>Shows the cost for each data collection path</description>
+  <fieldset submitButton="true" autoRun="true">
+    <input type="dropdown" token="cp" searchWhenChanged="true">
+      <label>Cloud Provider</label>
+      <choice value="aws">Amazon Web Services</choice>
+      <choice value="gcp">Google Compute</choice>
+      <choice value="azure">Azure</choice>
+    </input>
+    <input type="text" token="license" searchWhenChanged="true">
+      <label>Splunk License Amount (in GB)</label>
+    </input>
+    <input type="multiselect" token="ds">
+      <label>Data Sources</label>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>Push Path</title>
+      <single>
+        <title>Push</title>
+        <search>
+          <query>|makeresults | eval push_path=$license$ | table push_path</query>
+          <earliest>-15m</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+      </single>
+    </panel>
+    <panel>
+      <title>Pull Path</title>
+      <single>
+        <title>Pull</title>
+        <search>
+          <query>|makeresults | eval pull_cost=$license$ | fields pull_cost</query>
+          <earliest>-15m</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Estimated Values</title>
+        <search>
+          <query>| makeresults | eval "aws:cloudwatchlogs:vpcflowlogs"=$license$*.4, "aws:cloudtrail"=$license$*.4 | table "aws:cloudwatchlogs:vpcflowlogs" "aws:cloudtrail" | addtotals  | transpose</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+    <panel>
+      <single>
+        <title>Bandwidth Utilization</title>
+        <search>
+          <query>| makeresults | eval bandwidth=((((($license$/10)*8)*1024)/86400)) | fields bandwidth</query>
+          <earliest>-15m</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0.0000</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">Mbps</option>
+      </single>
+    </panel>
+  </row>
+</form>
