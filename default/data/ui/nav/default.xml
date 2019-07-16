@@ -1,5 +1,5 @@
 <nav search_view="search" color="#65A637">
-    <view name="ensemble_accounts" default='true' />
+    <view name="grand_central_accounts" default='true' />
     <view name="trumpet" />
     <view name="templates" />
 </nav>

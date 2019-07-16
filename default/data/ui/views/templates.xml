@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
-<view template="ensemble:/templates/templates.html" type="html">
-	<label>Ensemble Template Manager</label>
+<view template="grand-central:/templates/templates.html" type="html">
+	<label>Grand Central Template Manager</label>
 </view>

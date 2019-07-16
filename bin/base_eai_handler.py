@@ -5,7 +5,7 @@ import splunk.rest as rest
 import log_helper
 
 # Setup the handler
-logger = log_helper.setup(logging.INFO, 'ESInstancesEAIHandler', 'base_handler.log')
+logger = log_helper.setup(logging.INFO, 'BaseEAIHandler', 'base_handler.log')
 
 class BaseEAIHandler(admin.MConfigHandler):
     def get_param(self, param, default=None):

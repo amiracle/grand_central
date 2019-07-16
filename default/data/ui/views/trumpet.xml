@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
-<view template="ensemble:/templates/trumpet.html" type="html">
+<view template="grand-central:/templates/trumpet.html" type="html">
 	<label>Trumpet AWS Configuration Builder</label>
 </view>
