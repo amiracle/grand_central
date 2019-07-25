@@ -20,12 +20,17 @@
       <choice value="azure">Azure</choice>
       <choice value="vmware">VMware</choice>
     </input>
+    <input type="dropdown" token="dt" searchWhenChanged="true">
+      <label>Deployment Type</label>
+      <choice value="sc">Splunk Cloud</choice>
+      <choice value="byol">BYOL</choice>
+    </input>
     <input type="dropdown" token="size" searchWhenChanged="true">
       <label>Cloud Deployment Size</label>
-      <choice value="s">Small</choice>
-      <choice value="m">Medium</choice>
-      <choice value="l">Large</choice>
-      <choice value="xl">X-Large</choice>
+      <choice value="s">Testing Cloud, no production workloads</choice>
+      <choice value="m">One or two production workloads</choice>
+      <choice value="l">A couple production workloads and multiple accounts</choice>
+      <choice value="xl">Multiple Production workloads and many accounts</choice>
     </input>
     <input type="dropdown" token="ds" searchWhenChanged="true">
       <label>Data Sources</label>
@@ -39,7 +44,7 @@
       <choice value="*">All</choice>
     </input>
     <input type="link" token="method" searchWhenChanged="true">
-      <label>Collection Method</label>
+      <label>Recommended Collection Method</label>
       <fieldForLabel>method</fieldForLabel>
       <fieldForValue>method</fieldForValue>
       <search>
@@ -47,17 +52,12 @@
       </search>
     </input>
     <input type="link" token="input" searchWhenChanged="true">
-      <label>Input type</label>
+      <label>Recommended Input type</label>
       <fieldForLabel>input</fieldForLabel>
       <fieldForValue>input</fieldForValue>
       <search>
         <query>| inputlookup cloud_gdi | search vendor=$cloud$ size=$size$ datasources=$ds$ | dedup input | table input</query>
       </search>
-    </input>
-    <input type="dropdown" token="dt" searchWhenChanged="true">
-      <label>Deployment Type</label>
-      <choice value="sc">Splunk Cloud</choice>
-      <choice value="byol">BYOL</choice>
     </input>
     <input type="link" token="docurl" searchWhenChanged="false">
       <label>Documentation URL</label>
@@ -83,6 +83,16 @@
         <query>| inputlookup cloud_gdi | search vendor=$cloud$ size=$size$ datasources=$ds$ | dedup hwurl | table hwurl</query>
       </search>
     </input>
+    <input type="dropdown" token="region" searchWhenChanged="true">
+      <label>Region</label>
+      <fieldForLabel>label</fieldForLabel>
+      <fieldForValue>label</fieldForValue>
+      <search>
+        <query>| inputlookup regions</query>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </search>
+    </input>
   </fieldset>
   <row>
     <panel>
@@ -96,7 +106,8 @@
 | eval perc=$perclic$
 | eval gbused=lic*perc
 | foreach datasources* [eval perc_gbused=gbused*perc_lic] 
-| table datasources perc_gbused 
+| foreach datasources* [eval monthly_gbused=gbused*perc_lic*30]
+| table datasources perc_gbused monthly_gbused
 | addcoltotals</query>
           <earliest>-15m</earliest>
           <latest>now</latest>
@@ -108,7 +119,7 @@
     <panel>
       <title>Resource Usage</title>
       <single>
-        <title>License Usage</title>
+        <title>Daily License Usage</title>
         <search>
           <query>| makeresults 
 | eval lic=$splunklic$
@@ -119,10 +130,29 @@
           <latest>now</latest>
         </search>
         <option name="drilldown">none</option>
-        <option name="numberPrecision">0.0</option>
+        <option name="numberPrecision">0</option>
         <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
         <option name="refresh.display">progressbar</option>
-        <option name="underLabel">GB/Day</option>
+        <option name="underLabel">Daily Usage</option>
+        <option name="unit">GB</option>
+      </single>
+      <single>
+        <title>Monthly Data Collected</title>
+        <search>
+          <query>| makeresults 
+| eval lic=$splunklic$
+| eval perc=$perclic$
+| eval monthly_cost=lic*perc*30
+| table monthly_cost</query>
+          <earliest>-15m</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="underLabel">Monthly Usage</option>
+        <option name="unit">GB</option>
       </single>
       <single>
         <title>Bandwidth Requirements</title>

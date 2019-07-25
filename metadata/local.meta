@@ -166,7 +166,7 @@ modtime = 1563314987.861563000
 [grand_central_aws_accounts/337397712128]
 owner = admin
 version = 7.2.6
-modtime = 1563912789.911178000
+modtime = 1564074850.586842000
 
 [passwords/credential%3A38b4b6b2041a490199c362461fcf1363%3Aplaceholder%3A]
 owner = admin
@@ -197,37 +197,53 @@ modtime = 1563380080.748485000
 version = 7.2.6
 modtime = 1563380209.028271000
 
-[passwords/credential%3Ab60db5601aef4b13bb52368caa9b0ddf%3Aplaceholder%3A]
-owner = admin
-version = 7.2.6
-modtime = 1563912790.406464000
-
-[grand_central_aws_accounts/875456150869]
-owner = admin
-version = 7.2.6
-modtime = 1563912790.441175000
-
-[passwords/credential%3A91d80abe4c6140d68348dde7aa4b9e0d%3Aplaceholder%3A]
-owner = admin
-version = 7.2.6
-modtime = 1563912790.531820000
-
-[grand_central_aws_accounts/911795064262]
-owner = admin
-version = 7.2.6
-modtime = 1563912790.572407000
-
 [views/cost_path]
 version = 7.2.6
-modtime = 1564014204.998163000
+modtime = 1564073733.844950000
 
 [lookups/cloud_gdi]
 owner = admin
 version = 7.2.6
-modtime = 1564012002.643301000
+modtime = 1564074162.797825000
 
 [transforms/cloud_gdi]
 export = none
 owner = admin
 version = 7.2.6
 modtime = 1564012176.120066000
+
+[lookups/aws_region]
+owner = admin
+version = 7.2.6
+modtime = 1564068354.306895000
+
+[transforms/aws_region]
+export = none
+owner = admin
+version = 7.2.6
+modtime = 1564067306.148210000
+
+[lookups/azure_region]
+owner = admin
+version = 7.2.6
+modtime = 1564068630.813443000
+
+[passwords/credential%3Af1dbb1d5c20e4dd3a6698126cce0857a%3Aplaceholder%3A]
+owner = admin
+version = 7.2.6
+modtime = 1564074851.088555000
+
+[grand_central_aws_accounts/875456150869]
+owner = admin
+version = 7.2.6
+modtime = 1564074851.123193000
+
+[passwords/credential%3Aeef94aa5cb0946928fb10379ccf506a5%3Aplaceholder%3A]
+owner = admin
+version = 7.2.6
+modtime = 1564074851.187972000
+
+[grand_central_aws_accounts/911795064262]
+owner = admin
+version = 7.2.6
+modtime = 1564074851.213813000
