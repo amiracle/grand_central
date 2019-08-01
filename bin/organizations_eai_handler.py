@@ -54,10 +54,6 @@ class OrganizationsEAIHandler(base_eai_handler.BaseEAIHandler):
             passwords_conf_payload = self.simple_request_eai(aws_secret_key_link_alternate, 'list', 'GET')
             SECRET_KEY = passwords_conf_payload['entry'][0]['content']['clear_password']
 
-            logger.info(aws_access_key)
-
-            logger.info(SECRET_KEY)
-
             # Make call to AWS API endpoint
             client = boto3.client('organizations', aws_access_key_id=aws_access_key, aws_secret_access_key=SECRET_KEY)
 
@@ -82,7 +78,6 @@ class OrganizationsEAIHandler(base_eai_handler.BaseEAIHandler):
         aws_account_id = self.callerArgs.id
 
         logger.info('Add organization accounts requested.')
-        logger.info(aws_account_id)
 
         if aws_account_id != '0':
             # Get list of all Grand Central accounts

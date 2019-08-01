@@ -184,6 +184,7 @@ class DeployedCloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler)
             'cloudformation_stack_id': response['StackId'],
             'data_collection_deployed': '0',
             'data_collection_deployment_success': '0',
+            'data_selections': params['data_selections'],
         }
 
         deployed_cloudformation_templates_eai_response_payload = self.simple_request_eai(self.get_conf_handler_path_name('deployed_cloudformation_templates'),
@@ -286,6 +287,7 @@ class DeployedCloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler)
             'cloudformation_stack_id': response['StackId'],
             'data_collection_deployed': '0',
             'data_collection_deployment_success': '0',
+            'data_selections': params['data_selections'],
         }
 
         deployed_cloudformation_templates_eai_response_payload = self.simple_request_eai(conf_handler_path, 'edit', 'POST', post_args)

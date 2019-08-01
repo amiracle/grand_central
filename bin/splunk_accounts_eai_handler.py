@@ -62,10 +62,9 @@ class SplunkAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
         splunk_accounts_eai_response_payload = self.simple_request_eai(self.get_conf_handler_path_name('splunk_accounts'),
             'create', 'POST', post_args)
 
-        splunk_accounts_rest_path = '/servicesNS/%s/%s/splunk_accounts/%s' % (
-            'nobody', self.appName, urllib.quote_plus(params['name']))
-        splunk_accounts_eai_response_payload = self.simple_request_eai(splunk_accounts_rest_path,
-                                                                                'read', 'GET')
+        splunk_accounts_rest_path = '/servicesNS/%s/%s/splunk_accounts/%s' % ('nobody', self.appName, urllib.quote_plus(params['name']))
+
+        splunk_accounts_eai_response_payload = self.simple_request_eai(splunk_accounts_rest_path, 'read', 'GET')
 
         self.set_conf_info_from_eai_payload(confInfo, splunk_accounts_eai_response_payload)
 
@@ -85,6 +84,8 @@ class SplunkAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
         params = self.validate_splunk_accounts_schema_params()
         conf_handler_path = '%s/%s' % (
         self.get_conf_handler_path_name('splunk_accounts', 'nobody'), conf_stanza)
+
+        /services/asdf/sadf/asdf/rankings + '/' + name
 
         # Create post args - remove name to ensure edit instead of create
         splunk_accounts_conf_postargs = {

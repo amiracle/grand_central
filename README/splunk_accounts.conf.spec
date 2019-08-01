@@ -10,5 +10,5 @@ splunk_hec_endpoint = <{management scheme}://{host}:{port}>
 * The HTTP Event Collector for the Splunk environment
 splunk_hec_ack_token = <Splunk HEC token>
 * A Splunk HEC token with indexer acknowledgement turned on
-spunk_hec_no_ack_token = <Splunk HEC token>
+splunk_hec_no_ack_token = <Splunk HEC token>
 * A Splunk HEC token with indexer acknowledgement turned off

@@ -2,4 +2,5 @@
     <view name="grand_central_accounts" default='true' />
     <view name="trumpet" />
     <view name="templates" />
+  <view name="cost_path" />
 </nav>

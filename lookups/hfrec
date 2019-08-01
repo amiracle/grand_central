@@ -1,0 +1,6 @@
+size,instance,method
+s,m5.large,hf
+m,m5.xlarge,hf
+l,m5.2xlarge,hf
+xl,m5.4xlarge,hf
+xl,none,fh

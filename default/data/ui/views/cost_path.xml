@@ -1,0 +1,261 @@
+<form>
+  <label>Cloud Source Price Path</label>
+  <description>Price path for customers</description>
+  <fieldset submitButton="true" autoRun="true" formaction="$docurl$" target="picture_frame">
+    <input type="text" token="splunklic">
+      <label>Splunk License</label>
+    </input>
+    <input type="dropdown" token="perclic">
+      <label>Percent License</label>
+      <choice value=".05">5%</choice>
+      <choice value=".10">10%</choice>
+      <choice value=".15">15%</choice>
+      <choice value=".20">20%</choice>
+      <default>.10</default>
+    </input>
+    <input type="dropdown" token="cloud" searchWhenChanged="true">
+      <label>Cloud Provider</label>
+      <choice value="aws">Amazon</choice>
+      <choice value="gcp">Google</choice>
+      <choice value="azure">Azure</choice>
+      <choice value="vmware">VMware</choice>
+    </input>
+    <input type="dropdown" token="region" searchWhenChanged="true">
+      <label>Region</label>
+      <fieldForLabel>label</fieldForLabel>
+      <fieldForValue>label</fieldForValue>
+      <search>
+        <query>| inputlookup regions</query>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </search>
+    </input>
+    <input type="dropdown" token="size" searchWhenChanged="true">
+      <label>Cloud Deployment Size</label>
+      <choice value="s">Testing Cloud, no production workloads</choice>
+      <choice value="m">One or two production workloads</choice>
+      <choice value="l">A couple production workloads and multiple accounts</choice>
+      <choice value="xl">Multiple Production workloads and many accounts</choice>
+    </input>
+    <input type="dropdown" token="ds" searchWhenChanged="true">
+      <label>Data Sources</label>
+      <fieldForLabel>datasources</fieldForLabel>
+      <fieldForValue>datasources</fieldForValue>
+      <search>
+        <query>| inputlookup cloud_gdi | search vendor=$cloud$ | dedup datasources</query>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </search>
+      <choice value="*">All</choice>
+    </input>
+    <input type="link" token="method" searchWhenChanged="true">
+      <label>Recommended Collection Method</label>
+      <fieldForLabel>method</fieldForLabel>
+      <fieldForValue>method</fieldForValue>
+      <search>
+        <query>| inputlookup cloud_gdi | search vendor=$cloud$ size=$size$ datasources=$ds$ | dedup method | table method</query>
+      </search>
+    </input>
+    <input type="link" token="input" searchWhenChanged="true">
+      <label>Recommended Input type</label>
+      <fieldForLabel>input</fieldForLabel>
+      <fieldForValue>input</fieldForValue>
+      <search>
+        <query>| inputlookup cloud_gdi | search vendor=$cloud$ size=$size$ datasources=$ds$ | dedup input | table input</query>
+      </search>
+    </input>
+    <input type="link" token="docurl" searchWhenChanged="false">
+      <label>Documentation URL</label>
+      <fieldForLabel>docurl</fieldForLabel>
+      <fieldForValue>docurl</fieldForValue>
+      <search>
+        <query>| inputlookup cloud_gdi | search vendor=$cloud$ size=$size$ datasources=$ds$ | dedup docurl | table docurl</query>
+      </search>
+    </input>
+    <input type="link" token="archurl" searchWhenChanged="false">
+      <label>Architecture URL</label>
+      <fieldForLabel>archurl</fieldForLabel>
+      <fieldForValue>archurl</fieldForValue>
+      <search>
+        <query>| inputlookup cloud_gdi | search vendor=$cloud$ size=$size$ datasources=$ds$ | dedup archurl | table archurl</query>
+      </search>
+    </input>
+    <input type="link" token="hwurl" searchWhenChanged="false">
+      <label>Hardware URL</label>
+      <fieldForLabel>hwurl</fieldForLabel>
+      <fieldForValue>hwurl</fieldForValue>
+      <search>
+        <query>| inputlookup cloud_gdi | search vendor=$cloud$ size=$size$ datasources=$ds$ | dedup hwurl | table hwurl</query>
+      </search>
+    </input>
+    <input type="link" token="instance" searchWhenChanged="true">
+      <label>Recommended HF</label>
+      <fieldForLabel>instance</fieldForLabel>
+      <fieldForValue>instance</fieldForValue>
+      <search>
+        <query>| inputlookup hfrec |  search size = "$size$" method="$method$" | table instance</query>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </search>
+    </input>
+    <input type="dropdown" token="LeaseContractLength" searchWhenChanged="true">
+      <label>Contract Length</label>
+      <choice value="1yr">1yr</choice>
+      <choice value="3yr">3yr</choice>
+      <default>1yr</default>
+      <initialValue>1yr</initialValue>
+    </input>
+    <input type="dropdown" token="Tenancy" searchWhenChanged="true">
+      <label>Tenancy</label>
+      <choice value="Shared">Shared</choice>
+      <choice value="Dedicated">Dedicated</choice>
+      <default>Shared</default>
+      <initialValue>Shared</initialValue>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>Data Sources for $cloud$</title>
+      <table>
+        <search>
+          <query>| inputlookup cloud_gdi 
+| search vendor=$cloud$ 
+| dedup datasources 
+| eval lic=$splunklic$
+| eval perc=$perclic$
+| eval gbused=lic*perc
+| foreach datasources* [eval perc_gbused=gbused*perc_lic] 
+| foreach datasources* [eval monthly_gbused=gbused*perc_lic*30]
+| table datasources perc_gbused monthly_gbused
+| addcoltotals</query>
+          <earliest>-15m</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+    <panel>
+      <title>Resource Usage</title>
+      <single>
+        <title>Daily License Usage</title>
+        <search>
+          <query>| makeresults 
+| eval lic=$splunklic$
+| eval perc=$perclic$
+| eval cost=lic*perc
+| table cost</query>
+          <earliest>-15m</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="underLabel">Daily Usage</option>
+        <option name="unit">GB</option>
+      </single>
+      <single>
+        <title>Monthly Data Collected</title>
+        <search>
+          <query>| makeresults 
+| eval lic=$splunklic$
+| eval perc=$perclic$
+| eval monthly_cost=lic*perc*30
+| table monthly_cost</query>
+          <earliest>-15m</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="underLabel">Monthly Usage</option>
+        <option name="unit">GB</option>
+      </single>
+      <single>
+        <title>Bandwidth Requirements</title>
+        <search>
+          <query>| makeresults | eval bandwidth=((((($splunklic$/10)*8)*1024)/86400)) | fields bandwidth</query>
+          <earliest>-15m</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0.000</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="underLabel">Mbps</option>
+      </single>
+    </panel>
+    <panel>
+      <input type="dropdown" token="TermType" searchWhenChanged="true">
+        <label>Term Type</label>
+        <choice value="Reserved">Reserved</choice>
+        <choice value="OnDemand">OnDemand</choice>
+        <default>Reserved</default>
+        <initialValue>Reserved</initialValue>
+      </input>
+      <input type="dropdown" token="PurchaseOption" searchWhenChanged="true">
+        <label>Purchase Option Filter</label>
+        <choice value="All Upfront">All Upfront</choice>
+        <choice value="Partial Upfront">Partial Upfront</choice>
+        <choice value="No Upfront">No Upfront</choice>
+        <default>All Upfront</default>
+      </input>
+      <table>
+        <title>Resource Cost</title>
+        <search>
+          <query>index="aws_price" sourcetype="aws_ec2_price_list" "Operating System"=Linux OfferingClass=convertible "Pre Installed S_W"=NA "Instance Type"=$instance$  Location="$region$" PurchaseOption="$PurchaseOption$" TermType=$TermType$ LeaseContractLength=$LeaseContractLength$ Tenancy=$Tenancy$ 
+| stats  sum(PricePerUnit) AS "Cost" by PurchaseOption | fieldformat Cost = "$USD ".tostring(Cost, "commas")</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+      <single>
+        <title>Network Cost</title>
+        <search>
+          <query>| makeresults 
+| eval lic=$splunklic$
+| eval perc=$perclic$
+| eval network_cost=lic*perc*30*.01
+| table network_cost</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="underLabel">Per Month</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Helpful Links and Architecture</title>
+      <html>
+      <p>
+        <h2>
+            Documentation Link for $ds$ :<a href="$docurl$" target="picture_frame">$docurl$</a>
+          </h2>
+      </p>
+      <p>
+      <h2>
+          Hardware Link for $ds$ : <a href="$hwurl$" target="picture_frame">$hwurl$</a>
+      </h2>
+      </p>
+      <p>
+        For AWS, you can use this link to help determine the size of your environment: <a href="https://github.com/amiracle/cooking_with_Splunk_and_AWS/blob/master/11%20-%20Sizing%20AWS%20Environment.pptx">AWS Sizing Help</a>
+      </p>
+      <p>
+        Example Architecture Design : <img src="$archurl$" target="picture_frame"/>
+      </p>
+        <p>$archurl$</p>
+      <ifrmae name="picture_frame" height="600px" width="100%" style="border:2px;"/>
+    </html>
+    </panel>
+  </row>
+</form>

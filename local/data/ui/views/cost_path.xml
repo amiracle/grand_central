@@ -25,12 +25,22 @@
       <choice value="sc">Splunk Cloud</choice>
       <choice value="byol">BYOL</choice>
     </input>
+    <input type="dropdown" token="region" searchWhenChanged="true">
+      <label>Region</label>
+      <fieldForLabel>label</fieldForLabel>
+      <fieldForValue>label</fieldForValue>
+      <search>
+        <query>| inputlookup regions</query>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </search>
+    </input>
     <input type="dropdown" token="size" searchWhenChanged="true">
       <label>Cloud Deployment Size</label>
-      <choice value="s">Testing Cloud, no production workloads</choice>
-      <choice value="m">One or two production workloads</choice>
-      <choice value="l">A couple production workloads and multiple accounts</choice>
-      <choice value="xl">Multiple Production workloads and many accounts</choice>
+      <choice value="m5.large">Testing Cloud, no production workloads</choice>
+      <choice value="m5.xlarge">One or two production workloads</choice>
+      <choice value="m5.2xlarge">A couple production workloads and multiple accounts</choice>
+      <choice value="m5.4xlarge">Multiple Production workloads and many accounts</choice>
     </input>
     <input type="dropdown" token="ds" searchWhenChanged="true">
       <label>Data Sources</label>
@@ -83,15 +93,20 @@
         <query>| inputlookup cloud_gdi | search vendor=$cloud$ size=$size$ datasources=$ds$ | dedup hwurl | table hwurl</query>
       </search>
     </input>
-    <input type="dropdown" token="region" searchWhenChanged="true">
-      <label>Region</label>
-      <fieldForLabel>label</fieldForLabel>
-      <fieldForValue>label</fieldForValue>
+    <input type="dropdown" token="PurchaseOption">
+      <label>Purchase Option</label>
+      <fieldForLabel>PurchaseOption</fieldForLabel>
+      <fieldForValue>PurchaseOption</fieldForValue>
       <search>
-        <query>| inputlookup regions</query>
+        <query/>
         <earliest>-24h@h</earliest>
         <latest>now</latest>
       </search>
+      <choice value="">On Demand</choice>
+      <choice value="&quot;All Upfront&quot;">All Upfront</choice>
+      <choice value="&quot;Partial Upfront&quot;">Partial Upfront</choice>
+      <choice value="&quot;No Upfront&quot;">No Upfront</choice>
+      <default></default>
     </input>
   </fieldset>
   <row>
@@ -169,6 +184,36 @@
       </single>
     </panel>
     <panel>
+      <single>
+        <title>Resource Cost</title>
+        <search>
+          <query>| makeresults | eval pull_cost=500 | table pull_cost</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </single>
+      <single>
+        <title>Network Cost</title>
+        <search>
+          <query>| makeresults | eval pull_cost=500 | table pull_cost</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+      </single>
+      <single>
+        <title>Services Cost</title>
+        <search>
+          <query>| makeresults | eval pull_cost=500 | table pull_cost</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
       <title>Helpful Links and Architecture</title>
       <html>
       <p>
@@ -190,6 +235,21 @@
         <p>$archurl$</p>
       <ifrmae name="picture_frame" height="600px" width="100%" style="border:2px;"/>
     </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Cloud Costs</title>
+        <search>
+          <query>index="aws_price" "Current Generation"=Yes "License Model"="No License required"  "Instance Type"="$size$"  Location="$region$"  | eval machine_cost=if(Unit=="Hrs", PricePerUnit*744, PricePerUnit) | table machine_cost</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="count">10</option>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
     </panel>
   </row>
 </form>

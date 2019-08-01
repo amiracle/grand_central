@@ -1,0 +1,6 @@
+size,instance
+s,m5.large
+m,m5.xlarge
+l,m5.2xlarge
+xl,m5.4xlarge
+fh,No Heavy Forwarder Required
