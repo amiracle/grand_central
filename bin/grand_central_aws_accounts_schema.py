@@ -21,7 +21,7 @@ def name_validator(name):
 
 server_schema = Schema({
     'name': And(str, len, name_validator, error='Invalid name value'),
-    'display_name': And(str, len, name_validator, error='Invalid display name value'),
+    'display_name': And(str, len, error='Invalid display name value'),
     'aws_account_id': And(str, len, error='Invalid AWS Account ID'),
     'aws_access_key': And(str, len, error='Invalid AWS Access Key'),
     Optional('aws_account_arn'): And(str, len, error='Invalid AWS Account ARN'),

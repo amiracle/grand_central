@@ -1,0 +1,286 @@
+<form>
+  <label>Push vs. Pull</label>
+  <description>This compares collecting high volume data sources (CloudTrail, Config, Cloudwatch Logs (e.g. VPCFLow Logs, etc.) by either using Heavy Forwarders for Pull or Kinesis Data Firehose for Push. Please note that beyond 50 Accounts, using Heavy Forwarders will not be cost effective both from a hardware and administration standpoint.</description>
+  <fieldset submitButton="true" autoRun="true">
+    <input type="text" token="dv" searchWhenChanged="true">
+      <label>Splunk Licence Volume (in GB)</label>
+    </input>
+    <input type="text" token="num_accounts" searchWhenChanged="true">
+      <label>Number of Accounts</label>
+    </input>
+    <input type="dropdown" token="cloud" searchWhenChanged="true">
+      <label>Cloud Provider</label>
+      <choice value="aws">Amazon</choice>
+      <choice value="gcp">Google</choice>
+      <choice value="azure">Azure</choice>
+      <choice value="vmware">VMware</choice>
+    </input>
+    <input type="dropdown" token="region" searchWhenChanged="true">
+      <label>Region</label>
+      <fieldForLabel>label</fieldForLabel>
+      <fieldForValue>label</fieldForValue>
+      <search>
+        <query>| inputlookup regions</query>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </search>
+    </input>
+    <input type="dropdown" token="instance" searchWhenChanged="true">
+      <label>Heavy Forwarder Type</label>
+      <fieldForLabel>instance</fieldForLabel>
+      <fieldForValue>instance</fieldForValue>
+      <search>
+        <query>| inputlookup hfrec |   table instance</query>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </search>
+    </input>
+    <input type="dropdown" token="hfs" searchWhenChanged="true">
+      <label>Number of HF's</label>
+      <fieldForLabel>hfs</fieldForLabel>
+      <fieldForValue>hfs</fieldForValue>
+      <search>
+        <query>| inputlookup hfrec | search num_accounts&lt;=$num_accounts$ instance=$instance$
+
+| eval num_hf=round($dv$/gb,0)
+| eval num_hf_account=round($num_accounts$/num_accounts)
+| eval num_hfs=if(num_hf&gt;num_hf_account, num_hf, num_hf_account)
+| stats max(num_hfs) AS hfs
+| table hfs</query>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </search>
+    </input>
+    <input type="dropdown" token="perc" searchWhenChanged="true">
+      <label>Percentage of License</label>
+      <choice value=".05">5%</choice>
+      <choice value=".1">10%</choice>
+      <choice value=".20">20%</choice>
+      <choice value=".5">50%</choice>
+      <choice value=".75">75%</choice>
+      <choice value="1">100%</choice>
+      <default>.1</default>
+      <initialValue>.1</initialValue>
+    </input>
+    <input type="dropdown" token="monthly_cost" searchWhenChanged="true">
+      <label>Monthly Usage</label>
+      <fieldForLabel>monthly_cost</fieldForLabel>
+      <fieldForValue>monthly_cost</fieldForValue>
+      <search>
+        <query>| makeresults | eval monthly_cost=$dv$*30*$perc$</query>
+      </search>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <single>
+        <title>Total Monthly Pull Cost</title>
+        <search>
+          <query>| inputlookup instance_price.csv 
+| search "Instance Type"="$instance$"  Location="$region$"  
+| stats  sum(monthly_cost) AS "Cost" 
+| eval ha_cost=Cost*$ha$*$hfs$ 
+| eval network_cost=(($dv$*$perc$)*.15)*30 
+| join [| inputlookup aws_s3_storage_cost 
+| search Location="$region$" 
+| eval storage_cost=PricePerUnit*$dv$*30*$perc$
+| table storage_cost] 
+
+| eval totalPullCost=storage_cost+network_cost+ha_cost
+| table totalPullCost</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+      </single>
+      <single>
+        <title>Total Monthly Push Cost</title>
+        <search>
+          <query>| inputlookup aws_firehose_prices | search Location="$region$"
+| eval monthly_cost=$monthly_cost$
+| eval 
+firehose_totalcost=case(monthly_cost&gt;mvindex(StartingRange,0) AND monthly_cost&lt;=tonumber(mvindex(EndingRange,0)), tonumber(mvindex(PricePerUnit,0))*monthly_cost, 
+monthly_cost&gt;=tonumber(mvindex(StartingRange,0)) AND monthly_cost&lt;=tonumber(mvindex(EndingRange,0)),tonumber(mvindex(PricePerUnit,0))*tonumber(mvindex(EndingRange,0))+(monthly_cost-tonumber(mvindex(EndingRange,0)))*tonumber(mvindex(PricePerUnit,1)),  monthly_cost&gt;=tonumber(mvindex(StartingRange,0)) AND 
+monthly_cost&lt;=tonumber(mvindex(EndingRange,0)),tonumber(mvindex(PricePerUnit,0))*tonumber(mvindex(EndingRange,0))+tonumber(mvindex(PricePerUnit,1))*(tonumber(mvindex(EndingRange,1))-tonumber(mvindex(EndingRange,0)))+(monthly_cost-tonumber(mvindex(EndingRange,1)))*tonumber(mvindex(PricePerUnit,3)))
+| dedup firehose_totalcost
+| table firehose_totalcost
+
+| join [| inputlookup aws_cloudwatch_pricelist.csv 
+| search Location="$region$"
+| eval monthly_cost=$monthly_cost$
+| eval 
+cw_storage_cost=PricePerUnit*monthly_cost
+| table cw_storage_cost]
+
+|join [| inputlookup aws_cloudwatch_aws_vended_logs_pricelist  | search Location="$region$"
+| eval monthly_cost=$monthly_cost$
+| eval 
+cw_totalcost=case(monthly_cost&gt;mvindex(StartingRange,0) AND monthly_cost&lt;=tonumber(mvindex(EndingRange,0)), tonumber(mvindex(PricePerUnit,0))*monthly_cost, 
+monthly_cost&gt;=tonumber(mvindex(StartingRange,0)) AND monthly_cost&lt;=tonumber(mvindex(EndingRange,0)),tonumber(mvindex(PricePerUnit,0))*tonumber(mvindex(EndingRange,0))+(monthly_cost-tonumber(mvindex(EndingRange,0)))*tonumber(mvindex(PricePerUnit,1)),  monthly_cost&gt;=tonumber(mvindex(StartingRange,0)) AND 
+monthly_cost&lt;=tonumber(mvindex(EndingRange,0)),tonumber(mvindex(PricePerUnit,0))*tonumber(mvindex(EndingRange,0))+tonumber(mvindex(PricePerUnit,1))*(tonumber(mvindex(EndingRange,1))-tonumber(mvindex(EndingRange,0)))+(monthly_cost-tonumber(mvindex(EndingRange,1)))*tonumber(mvindex(PricePerUnit,3)))
+| table cw_totalcost
+| dedup cw_totalcost]
+
+| eval totalPushCost=cw_totalcost+cw_storage_cost+firehose_totalcost
+| table totalPushCost</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Pull Method using Heavy Forwarders ($instance$)</title>
+      <input type="checkbox" token="pullds" searchWhenChanged="true">
+        <label>Pull Data Sources</label>
+        <fieldForLabel>datasources</fieldForLabel>
+        <fieldForValue>datasources</fieldForValue>
+        <search>
+          <query>| inputlookup cloud_gdi | search vendor=$cloud$ delivery=pull size=l | dedup datasources</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <delimiter> </delimiter>
+        <default>Config,CloudWatch Metrics,Description,S3AccessLogs</default>
+        <initialValue>Config,CloudWatch Metrics,Description,S3AccessLogs</initialValue>
+      </input>
+      <input type="radio" token="ha" searchWhenChanged="true">
+        <label>High Availability</label>
+        <choice value="3">Yes</choice>
+        <choice value="1">No</choice>
+        <default>3</default>
+        <initialValue>3</initialValue>
+      </input>
+      <single>
+        <title>Hardware Cost</title>
+        <search>
+          <query>| inputlookup instance_price.csv 
+| search "Instance Type"=$instance$  Location="$region$"  
+| stats  sum(monthly_cost) AS "Cost" 
+| eval ha_cost=Cost*$ha$*$hfs$ 
+| table ha_cost</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+      </single>
+      <single>
+        <title>Network Cost</title>
+        <search>
+          <query>| makeresults |  eval network_cost=($dv$*$perc$*30)*.15 | table network_cost</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+      </single>
+      <single>
+        <title>S3 Storage Costs</title>
+        <search>
+          <query>| inputlookup aws_s3_storage_cost | search Location="US East (N. Virginia)" | eval storage_cost=PricePerUnit*$dv$*30*$perc$ | table storage_cost</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+      </single>
+    </panel>
+    <panel>
+      <title>Push Method</title>
+      <input type="checkbox" token="pushds" searchWhenChanged="true">
+        <label>Push Data Sources</label>
+        <fieldForLabel>datasources</fieldForLabel>
+        <fieldForValue>datasources</fieldForValue>
+        <search>
+          <query>| inputlookup cloud_gdi | search vendor=$cloud$ delivery=push size=l | dedup datasources</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <delimiter> </delimiter>
+        <default>CloudTrail,CloudWatchLogs</default>
+        <initialValue>CloudTrail,CloudWatchLogs</initialValue>
+      </input>
+      <single>
+        <title>Kinesis Data Firehose Cost</title>
+        <search>
+          <query>| inputlookup aws_firehose_prices | search Location="$region$"
+| eval monthly_cost=$monthly_cost$
+| eval 
+firehose_totalcost=case(monthly_cost&gt;mvindex(StartingRange,0) AND monthly_cost&lt;=tonumber(mvindex(EndingRange,0)), tonumber(mvindex(PricePerUnit,0))*monthly_cost, 
+monthly_cost&gt;=tonumber(mvindex(StartingRange,0)) AND monthly_cost&lt;=tonumber(mvindex(EndingRange,0)),tonumber(mvindex(PricePerUnit,0))*tonumber(mvindex(EndingRange,0))+(monthly_cost-tonumber(mvindex(EndingRange,0)))*tonumber(mvindex(PricePerUnit,1)),  monthly_cost&gt;=tonumber(mvindex(StartingRange,0)) AND 
+monthly_cost&lt;=tonumber(mvindex(EndingRange,0)),tonumber(mvindex(PricePerUnit,0))*tonumber(mvindex(EndingRange,0))+tonumber(mvindex(PricePerUnit,1))*(tonumber(mvindex(EndingRange,1))-tonumber(mvindex(EndingRange,0)))+(monthly_cost-tonumber(mvindex(EndingRange,1)))*tonumber(mvindex(PricePerUnit,3)))
+| dedup firehose_totalcost
+| table firehose_totalcost</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+      </single>
+      <single>
+        <title>CloudWatch Storage Cost</title>
+        <search>
+          <query>| inputlookup aws_cloudwatch_pricelist.csv 
+| search Location="$region$"
+| eval monthly_cost=$monthly_cost$
+| eval 
+cw_storage_cost=PricePerUnit*monthly_cost
+| table cw_storage_cost</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+      </single>
+      <single>
+        <title>CloudWatch Logs Cost</title>
+        <search>
+          <query>| inputlookup aws_cloudwatch_aws_vended_logs_pricelist  | search Location="$region$"
+| eval monthly_cost=$monthly_cost$
+| eval 
+cw_totalcost=case(monthly_cost&gt;mvindex(StartingRange,0) AND monthly_cost&lt;=tonumber(mvindex(EndingRange,0)), tonumber(mvindex(PricePerUnit,0))*monthly_cost, 
+monthly_cost&gt;=tonumber(mvindex(StartingRange,0)) AND monthly_cost&lt;=tonumber(mvindex(EndingRange,0)),tonumber(mvindex(PricePerUnit,0))*tonumber(mvindex(EndingRange,0))+(monthly_cost-tonumber(mvindex(EndingRange,0)))*tonumber(mvindex(PricePerUnit,1)),  monthly_cost&gt;=tonumber(mvindex(StartingRange,0)) AND 
+monthly_cost&lt;=tonumber(mvindex(EndingRange,0)),tonumber(mvindex(PricePerUnit,0))*tonumber(mvindex(EndingRange,0))+tonumber(mvindex(PricePerUnit,1))*(tonumber(mvindex(EndingRange,1))-tonumber(mvindex(EndingRange,0)))+(monthly_cost-tonumber(mvindex(EndingRange,1)))*tonumber(mvindex(PricePerUnit,3)))
+| table cw_totalcost
+| dedup cw_totalcost</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">$</option>
+        <option name="unitPosition">before</option>
+        <option name="useThousandSeparators">1</option>
+      </single>
+    </panel>
+  </row>
+</form>

@@ -1,6 +1,5 @@
-size,instance,method
-s,m5.large,hf
-m,m5.xlarge,hf
-l,m5.2xlarge,hf
-xl,m5.4xlarge,hf
-xl,none,fh
+size,instance,method,num_accounts,gb
+s,m5.large,hf,1,250
+m,m5.xlarge,hf,5,500
+l,m5.2xlarge,hf,25,1000
+xl,m5.4xlarge,hf,50,2000

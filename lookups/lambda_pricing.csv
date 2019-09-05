@@ -1,0 +1,13 @@
+Location,PricePerUnit,PriceDescription
+"Asia Pacific (Singapore)","0.0000166667","AWS Lambda - Total Compute - Asia Pacific (Singapore)"
+"EU (Frankfurt)","0.0000166667","AWS Lambda - Total Compute - EU (Frankfurt)"
+"US East (Ohio)","0.0000166667","AWS Lambda - Total Compute - US East (Ohio)"
+"AWS GovCloud (US)","0.0000166667","AWS Lambda - Total Compute - AWS GovCloud (US)"
+"Canada (Central)","0.0000166667","AWS Lambda - Total Compute - Canada (Central)"
+"AWS GovCloud (US-East)","0.0000166667","USD 1.66667E-5 per Lambda-GB-Second for Lambda-GB-Second in AWS GovCloud (US) East"
+"US West (N. California)","0.0000166667","AWS Lambda - Total Compute - US West (Northern California)"
+"South America (Sao Paulo)","0.0000166667","AWS Lambda - Total Compute - South America (Sao Paulo)"
+"Asia Pacific (Sydney)","0.0000166667","AWS Lambda - Total Compute - Asia Pacific (Sydney)"
+"Asia Pacific (Mumbai)","0.0000166667","AWS Lambda - Total Compute - Asia Pacific (Mumbai)"
+"Asia Pacific (Seoul)","0.0000166667","AWS Lambda - Total Compute - Asia Pacific (Seoul)"
+"EU (London)","0.0000166667","AWS Lambda - Total Compute - EU (London)"

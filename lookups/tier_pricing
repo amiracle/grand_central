@@ -1,0 +1,5 @@
+Min,Max,Tier, Description
+0,10000,1, Tier 1
+10001,20000,2, Tier 2
+20001,40000,3, Tier 3
+40000,10000000,4, Tier 4

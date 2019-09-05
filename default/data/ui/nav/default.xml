@@ -1,6 +1,9 @@
 <nav search_view="search" color="#65A637">
-    <view name="grand_central_accounts" default='true' />
+  <view name="observation_deck" default='true'/>
+    <view name="grand_central_accounts"  />
     <view name="trumpet" />
     <view name="templates" />
-  <view name="cost_path" />
+  <view name="pushvpull" />
+  <view name="health_check" />
+  <view name="search" />
 </nav>

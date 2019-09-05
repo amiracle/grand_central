@@ -1,0 +1,497 @@
+"Instance Type",vendor,LeaseContractLength,Location,"monthly_cost",OfferingClass,PriceDescription,PricePerUnit,serviceName,Tenancy,TermType
+"m5ad.2xlarge",AWS,1yr,"Canada (Central)","247.4700000",convertible,"Linux/UNIX (Amazon VPC), m5ad.2xlarge reserved instance applied","0.3390000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"EU (Paris)","1906.0300000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.6110000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"AWS GovCloud (US)","1980.4900000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.7130000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"Asia Pacific (Singapore)","1878.2900000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.5730000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"Canada (Central)","67.8900000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.0930000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"Asia Pacific (Tokyo)","2319.9400000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","3.1780000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"US East (Ohio)","2471.0500000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","3.3850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"Asia Pacific (Sydney)","62.7800000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"US East (Ohio)","823.44000000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.1280000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.24xlarge",AWS,1yr,"Asia Pacific (Sydney)","3603.2800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.24xlarge reserved instance applied","4.9360000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"Asia Pacific (Seoul)","2328.7000000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.1900000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"EU (Frankfurt)","1947.6400000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.6680000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"US West (N. California)","1324.9500000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.8150000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"EU (Paris)","1056.3100000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.4470000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.12xlarge",AWS,1yr,"Asia Pacific (Singapore)","1677.5400000",convertible,"Linux/UNIX (Amazon VPC), m5ad.12xlarge reserved instance applied","2.2980000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"Asia Pacific (Mumbai)","3160.9000000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","4.3300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"AWS GovCloud (US-East)","558.4500000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"Asia Pacific (Sydney)","3933.9700000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.3890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"US West (N. California)","3382.8200000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.6340000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"Canada (Central)","2733.8500000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","3.7450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"US West (N. California)","2649.9000000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.6300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"EU (Ireland)","454.7900000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.6230000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"AWS GovCloud (US-East)","329.9600000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4520000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"US West (Oregon)","1470.2200000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.0140000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"AWS GovCloud (US)","2010.4200000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.7540000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"US East (N. Virginia)","2471.0500000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","3.3850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.large",AWS,1yr,"US East (N. Virginia)","55.4800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.large reserved instance applied","0.0760000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","1148.2900000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.5730000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"Asia Pacific (Sydney)","279.5900000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3830000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"EU (Frankfurt)","3894.5500000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.3350000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"Asia Pacific (Singapore)","2448.4200000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.3540000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"EU (Frankfurt)","124.1000000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1700000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"EU (Frankfurt)","68.6200000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0940000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"Asia Pacific (Mumbai)","2614.8600000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","3.5820000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"AWS GovCloud (US-East)","3960.2500000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.4250000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"EU (Frankfurt)","162.0600000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2220000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"AWS GovCloud (US)","2234.5300000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","3.0610000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"US East (N. Virginia)","120.4500000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.1650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"Asia Pacific (Tokyo)","4098.2200000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.6140000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"AWS GovCloud (US)","3352.1600000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.5920000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"EU (Ireland)","1817.7000000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.4900000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"US West (Oregon)","1933.0400000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","2.6480000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"Asia Pacific (Tokyo)","1365.8300000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.8710000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.large",AWS,1yr,"AWS GovCloud (US)","75.19000000",convertible,"Linux/UNIX (Amazon VPC), m5ad.large reserved instance applied","0.1030000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"Asia Pacific (Tokyo)","341.6400000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4680000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"EU (Frankfurt)","2984.2400000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","4.0880000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"Asia Pacific (Mumbai)","527.0600000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.7220000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"Asia Pacific (Singapore)","260.6100000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3570000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"EU (Ireland)","297.8400000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4080000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"EU (London)","154.0300000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2110000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"AWS GovCloud (US)","3960.2500000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.4250000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"US West (Oregon)","205.8600000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.2820000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"Asia Pacific (Seoul)","2961.6100000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.0570000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","143.8100000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1970000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"Middle East (Bahrain)","3927.4000000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.3800000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"EU (London)","76.65000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1050000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"US West (Oregon)","120.4500000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.1650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"Asia Pacific (Singapore)","58.4000000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0800000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"US East (N. Virginia)","51.8300000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0710000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"Asia Pacific (Mumbai)","1307.4300000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","1.7910000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.12xlarge",AWS,1yr,"US East (N. Virginia)","1326.4100000",convertible,"Linux/UNIX (Amazon VPC), m5ad.12xlarge reserved instance applied","1.8170000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"US West (Oregon)","411.7200000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.5640000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"EU (Paris)","132.1300000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1810000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"Asia Pacific (Sydney)","502.2400000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.6880000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"Asia Pacific (Mumbai)","218.2700000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.2990000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"EU (London)","260.6100000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3570000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"Middle East (Bahrain)","3927.4000000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.3800000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"EU (Paris)","155.4900000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2130000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"Asia Pacific (Mumbai)","2614.8600000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","3.5820000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"US West (Oregon)","1647.6100000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.2570000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"EU (London)","2460.1000000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.3700000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"EU (Frankfurt)","2596.6100000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.5570000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"Asia Pacific (Singapore)","1224.2100000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.6770000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.12xlarge",AWS,1yr,"US West (Oregon)","1326.4100000",convertible,"Linux/UNIX (Amazon VPC), m5ad.12xlarge reserved instance applied","1.8170000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"US East (Ohio)","2205.3300000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","3.0210000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"Canada (Central)","102.2000000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1400000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"US West (N. California)","70.8100000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0970000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"US West (Oregon)","1103.0300000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","1.5110000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.4xlarge",AWS,1yr,"US East (N. Virginia)","442.3800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.4xlarge reserved instance applied","0.6060000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"US East (Ohio)","2471.0500000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","3.3850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"US West (N. California)","254.0400000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.3480000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"Canada (Central)","1640.3100000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.2470000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"AWS GovCloud (US-East)","1980.4900000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.7130000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"US West (Oregon)","483.2600000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.6620000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"US West (Oregon)","51.8300000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0710000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"Asia Pacific (Singapore)","1835.9500000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.5150000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"Middle East (Bahrain)","1110.3300000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.5210000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"AWS GovCloud (US)","3960.2500000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.4250000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"Asia Pacific (Mumbai)","263.5300000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.3610000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"EU (Paris)","264.2600000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3620000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.12xlarge",AWS,1yr,"Canada (Central)","1486.2800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.12xlarge reserved instance applied","2.0360000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"Canada (Central)","135.7800000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.1860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"EU (Paris)","77.38000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1060000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"EU (Stockholm)","481.0700000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.6590000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.large",AWS,1yr,"Asia Pacific (Sydney)","75.19000000",convertible,"Linux/UNIX (Amazon VPC), m5ad.large reserved instance applied","0.1030000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"EU (Frankfurt)","994.99000000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.3630000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"EU (Stockholm)","962.14000000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.3180000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"Canada (Central)","2733.8500000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","3.7450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"US East (Ohio)","1470.2200000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.0140000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"Middle East (Bahrain)","69.3500000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0950000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"AWS GovCloud (US-East)","1676.0800000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.2960000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"EU (Frankfurt)","2200.2200000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","3.0140000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"EU (Paris)","953.38000000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.3060000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"US West (Oregon)","2899.5600000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","3.9720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"EU (Ireland)","594.9500000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.8150000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"US West (N. California)","3382.8200000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.6340000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"US East (Ohio)","91.98000000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1260000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"AWS GovCloud (US)","1117.6300000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.5310000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"Asia Pacific (Seoul)","73.00000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1000000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"US East (N. Virginia)","241.6300000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.3310000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"EU (London)","1845.4400000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.5280000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"US West (N. California)","140.8900000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1930000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.xlarge",AWS,1yr,"US West (Oregon)","110.2300000",convertible,"Linux/UNIX (Amazon VPC), m5ad.xlarge reserved instance applied","0.1510000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"Asia Pacific (Singapore)","2087.0700000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.8590000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"AWS GovCloud (US)","1507.4500000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","2.0650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"EU (Frankfurt)","3894.5500000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.3350000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"EU (London)","130.6700000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1790000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.12xlarge",AWS,1yr,"US East (Ohio)","1326.4100000",convertible,"Linux/UNIX (Amazon VPC), m5ad.12xlarge reserved instance applied","1.8170000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.xlarge",AWS,1yr,"US East (N. Virginia)","110.2300000",convertible,"Linux/UNIX (Amazon VPC), m5ad.xlarge reserved instance applied","0.1510000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"Asia Pacific (Sydney)","1003.7500000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.3750000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"Asia Pacific (Sydney)","3011.9800000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","4.1260000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"EU (Stockholm)","566.4800000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.7760000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.xlarge",AWS,1yr,"US East (Ohio)","110.2300000",convertible,"Linux/UNIX (Amazon VPC), m5ad.xlarge reserved instance applied","0.1510000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"AWS GovCloud (US-East)","3960.2500000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.4250000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.24xlarge",AWS,1yr,"US East (Ohio)","2652.8200000",convertible,"Linux/UNIX (Amazon VPC), m5ad.24xlarge reserved instance applied","3.6340000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"US East (N. Virginia)","483.2600000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.6620000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"EU (Ireland)","56.9400000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0780000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"Asia Pacific (Mumbai)","871.62000000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.1940000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"EU (Frankfurt)","81.03000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1110000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"Asia Pacific (Singapore)","611.7400000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.8380000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"Asia Pacific (Singapore)","130.6700000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1790000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"Canada (Central)","1625.7100000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.2270000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"Asia Pacific (Sydney)","1505.9900000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","2.0630000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"Canada (Central)","1366.5600000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","1.8720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"Canada (Central)","3252.1500000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","4.4550000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"EU (Frankfurt)","1649.8000000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.2600000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"EU (London)","3690.8800000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.0560000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"EU (Paris)","1864.4200000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.5540000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"US East (N. Virginia)","1449.7800000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","1.9860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"Asia Pacific (Mumbai)","1743.2400000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.3880000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.24xlarge",AWS,1yr,"US West (Oregon)","2652.8200000",convertible,"Linux/UNIX (Amazon VPC), m5ad.24xlarge reserved instance applied","3.6340000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"Canada (Central)","56.9400000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0780000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"Asia Pacific (Seoul)","2961.6100000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.0570000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"Asia Pacific (Tokyo)","2093.6400000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.8680000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"Asia Pacific (Seoul)","62.0500000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"Asia Pacific (Seoul)","1164.3500000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.5950000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"Canada (Central)","819.79000000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.1230000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"US West (N. California)","3974.8500000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.4450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"EU (Ireland)","3570.4300000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","4.8910000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"South America (Sao Paulo)","1819.1600000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.4920000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","3444.1400000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.7180000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"EU (Paris)","3168.9300000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.3410000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"Asia Pacific (Tokyo)","1046.8200000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.4340000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"Asia Pacific (Tokyo)","2732.3900000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.7430000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"EU (Stockholm)","1443.2100000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","1.9770000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.xlarge",AWS,1yr,"Canada (Central)","124.1000000",convertible,"Linux/UNIX (Amazon VPC), m5ad.xlarge reserved instance applied","0.1700000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"US West (Oregon)","241.6300000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.3310000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"Asia Pacific (Sydney)","327.7700000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4490000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"AWS GovCloud (US-East)","2234.5300000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","3.0610000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.xlarge",AWS,1yr,"Asia Pacific (Sydney)","150.3800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.xlarge reserved instance applied","0.2060000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"US West (Oregon)","2205.3300000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","3.0210000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"Asia Pacific (Sydney)","3933.9700000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.3890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"US East (N. Virginia)","1647.6100000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.2570000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.2xlarge",AWS,1yr,"AWS GovCloud (US)","300.7600000",convertible,"Linux/UNIX (Amazon VPC), m5ad.2xlarge reserved instance applied","0.4120000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"Asia Pacific (Sydney)","1311.0800000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.7960000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","673.0600000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.9220000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"Middle East (Bahrain)","2219.9300000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","3.0410000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"Asia Pacific (Tokyo)","1740.3200000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.3840000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"EU (Paris)","2485.6500000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.4050000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"EU (Stockholm)","1924.2800000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.6360000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"Middle East (Bahrain)","138.7000000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1900000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"Canada (Central)","2168.1000000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","2.9700000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"Asia Pacific (Tokyo)","4098.2200000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.6140000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","2691.5100000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.6870000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.large",AWS,1yr,"US West (Oregon)","55.4800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.large reserved instance applied","0.0760000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"Asia Pacific (Sydney)","1675.3500000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.2950000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"US East (N. Virginia)","1933.0400000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","2.6480000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.large",AWS,1yr,"US East (Ohio)","55.4800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.large reserved instance applied","0.0760000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"Asia Pacific (Singapore)","76.65000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1050000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"US West (N. California)","331.4200000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4540000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"US East (Ohio)","45.9900000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0630000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"US East (Ohio)","1449.7800000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","1.9860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"US West (Oregon)","45.9900000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0630000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"Canada (Central)","113.8800000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1560000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.24xlarge",AWS,1yr,"AWS GovCloud (US)","3606.9300000",convertible,"Linux/UNIX (Amazon VPC), m5ad.24xlarge reserved instance applied","4.9410000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"Asia Pacific (Singapore)","521.9500000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7150000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"AWS GovCloud (US-East)","1117.6300000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.5310000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"AWS GovCloud (US)","125.5600000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"South America (Sao Paulo)","2425.7900000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","3.3230000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"US West (N. California)","165.7100000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2270000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"EU (Frankfurt)","1989.9800000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.7260000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"Asia Pacific (Tokyo)","523.4100000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.7170000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"Asia Pacific (Singapore)","3130.9700000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.2890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","573.7800000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"EU (Frankfurt)","497.1300000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.6810000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"EU (Frankfurt)","1297.9400000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.7780000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"EU (London)","1230.0500000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.6850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"US West (N. California)","3050.6700000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","4.1790000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"Canada (Central)","227.7600000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3120000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"Asia Pacific (Mumbai)","65.7000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.0900000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"EU (Paris)","528.5200000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7240000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"South America (Sao Paulo)","3639.0500000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.9850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"US East (Ohio)","411.7200000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.5640000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"Asia Pacific (Tokyo)","261.3400000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.3580000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"Asia Pacific (Tokyo)","85.41000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1170000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"US West (N. California)","1691.4100000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.3170000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"US East (Ohio)","183.9600000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.2520000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"Asia Pacific (Seoul)","145.2700000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.1990000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"AWS GovCloud (US)","70.0800000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0960000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","167.9000000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"US East (Ohio)","51.8300000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0710000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"EU (Paris)","1243.1900000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.7030000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"AWS GovCloud (US-East)","2013.3400000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.7580000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"US East (Ohio)","2899.5600000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","3.9720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"AWS GovCloud (US-East)","62.7800000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"US West (N. California)","662.8400000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.9080000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"Asia Pacific (Mumbai)","1053.3900000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.4430000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"Asia Pacific (Sydney)","139.4300000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1910000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"Asia Pacific (Tokyo)","72.2700000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0990000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"EU (London)","3690.8800000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.0560000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"EU (London)","1565.1200000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.1440000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"AWS GovCloud (US)","329.9600000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4520000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.12xlarge",AWS,1yr,"AWS GovCloud (US)","1803.1000000",convertible,"Linux/UNIX (Amazon VPC), m5ad.12xlarge reserved instance applied","2.4700000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"EU (Stockholm)","240.1700000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3290000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.xlarge",AWS,1yr,"AWS GovCloud (US)","150.3800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.xlarge reserved instance applied","0.2060000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"AWS GovCloud (US)","3015.6300000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","4.1310000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"AWS GovCloud (US)","82.49000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1130000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"US West (N. California)","281.7800000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"US West (Oregon)","2471.0500000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","3.3850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"US West (N. California)","1016.8900000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.3930000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"Middle East (Bahrain)","3330.2600000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.5620000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"EU (London)","615.3900000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.8430000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"Asia Pacific (Singapore)","3130.9700000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.2890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"US East (N. Virginia)","2899.5600000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","3.9720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"Asia Pacific (Seoul)","986.96000000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.3520000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"Asia Pacific (Tokyo)","3480.6400000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.7680000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"AWS GovCloud (US-East)","70.0800000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0960000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"EU (Stockholm)","2266.6500000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.1050000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"EU (Ireland)","1363.6400000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","1.8680000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"Asia Pacific (Seoul)","3493.0500000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","4.7850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.4xlarge",AWS,1yr,"US East (Ohio)","442.3800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.4xlarge reserved instance applied","0.6060000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"US East (N. Virginia)","102.9300000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1410000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"Asia Pacific (Seoul)","3493.0500000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","4.7850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"EU (Ireland)","3027.3100000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.1470000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"US West (Oregon)","1235.8900000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","1.6930000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"US West (Oregon)","735.11000000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.0070000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"Asia Pacific (Hong Kong)","3444.1400000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.7180000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"EU (Stockholm)","2885.6900000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","3.9530000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"US East (N. Virginia)","411.7200000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.5640000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"Canada (Central)","410.2600000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.5620000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"EU (Ireland)","1514.0200000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.0740000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"EU (Stockholm)","70.8100000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.0970000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"US West (Oregon)","2471.0500000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","3.3850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.4xlarge",AWS,1yr,"US West (Oregon)","442.3800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.4xlarge reserved instance applied","0.6060000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"Asia Pacific (Singapore)","1043.9000000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.4300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"Asia Pacific (Sydney)","2233.8000000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","3.0600000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"US East (N. Virginia)","2899.5600000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","3.9720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"Middle East (Bahrain)","81.76000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1120000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"US East (Ohio)","966.52000000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.3240000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"Canada (Central)","270.8300000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.3710000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"US West (Oregon)","60.5900000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.0830000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"US West (Oregon)","2899.5600000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","3.9720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"US West (N. California)","508.8100000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.6970000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"Asia Pacific (Singapore)","305.8700000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4190000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"Asia Pacific (Mumbai)","1580.4500000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.1650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"Asia Pacific (Tokyo)","1570.2300000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","2.1510000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"US East (Ohio)","2899.5600000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","3.9720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"Asia Pacific (Singapore)","235.0600000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.3220000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"US East (N. Virginia)","1470.2200000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.0140000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"Asia Pacific (Sydney)","2622.8900000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.5930000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"EU (Ireland)","74.46000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1020000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"US West (Oregon)","91.98000000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1260000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"EU (Ireland)","62.7800000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"EU (Frankfurt)","275.2100000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3770000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"AWS GovCloud (US)","62.7800000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"Asia Pacific (Seoul)","1974.6500000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.7050000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"US West (N. California)","82.49000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1130000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"US East (N. Virginia)","823.44000000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.1280000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"Asia Pacific (Sydney)","2008.2300000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.7510000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"Asia Pacific (Sydney)","1116.9000000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.5300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"Asia Pacific (Seoul)","582.5400000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.7980000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"EU (London)","64.9700000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"EU (Stockholm)","1133.6900000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.5530000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"US West (Oregon)","823.44000000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.1280000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"Asia Pacific (Sydney)","3350.7000000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.5900000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"US East (N. Virginia)","205.8600000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.2820000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"Asia Pacific (Tokyo)","170.8200000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2340000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"EU (Frankfurt)","1100.1100000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.5070000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"EU (Stockholm)","59.8600000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0820000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"US East (Ohio)","1103.0300000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","1.5110000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"Asia Pacific (Sydney)","70.0800000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0960000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"South America (Sao Paulo)","75.92000000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.1040000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"Middle East (Bahrain)","2617.7800000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.5860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"AWS GovCloud (US)","164.9800000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2260000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"AWS GovCloud (US)","279.5900000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3830000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"EU (Stockholm)","120.4500000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"South America (Sao Paulo)","302.9500000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.4150000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.24xlarge",AWS,1yr,"Canada (Central)","2972.5600000",convertible,"Linux/UNIX (Amazon VPC), m5ad.24xlarge reserved instance applied","4.0720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","1722.0700000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.3590000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"EU (London)","3130.9700000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.2890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"AWS GovCloud (US-East)","251.8500000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.3450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"Asia Pacific (Sydney)","164.2500000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2250000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"AWS GovCloud (US-East)","82.49000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1130000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"Middle East (Bahrain)","327.0400000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4480000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"AWS GovCloud (US)","502.2400000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.6880000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"US West (N. California)","1525.7000000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","2.0900000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"US East (Ohio)","1235.8900000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","1.6930000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"Asia Pacific (Tokyo)","289.8100000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3970000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"EU (Frankfurt)","248.9300000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.3410000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","336.5300000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4610000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"EU (London)","1043.9000000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.4300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"EU (Ireland)","1008.8600000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.3820000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"US East (Ohio)","241.6300000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.3310000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"EU (Ireland)","2726.5500000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","3.7350000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"AWS GovCloud (US)","3352.1600000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.5920000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"Canada (Central)","911.04000000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.2480000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.2xlarge",AWS,1yr,"US West (Oregon)","221.1900000",convertible,"Linux/UNIX (Amazon VPC), m5ad.2xlarge reserved instance applied","0.3030000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"US East (Ohio)","120.4500000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.1650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"EU (Ireland)","1189.9000000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.6300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"AWS GovCloud (US-East)","2640.4100000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.6170000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"US West (Oregon)","367.9200000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.5040000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.16xlarge",AWS,1yr,"US West (N. California)","2033.7800000",convertible,"Linux/UNIX (Amazon VPC), m5a.16xlarge reserved instance applied","2.7860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"US West (N. California)","1987.7900000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.7230000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"US West (N. California)","3974.8500000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.4450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"EU (Ireland)","113.8800000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1560000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"Asia Pacific (Hong Kong)","4036.9000000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.5300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"US East (Ohio)","483.2600000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.6620000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"US West (Oregon)","102.9300000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1410000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.24xlarge",AWS,1yr,"Asia Pacific (Singapore)","3355.8100000",convertible,"Linux/UNIX (Amazon VPC), m5ad.24xlarge reserved instance applied","4.5970000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"US East (N. Virginia)","367.9200000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.5040000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"EU (Stockholm)","1700.1700000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.3290000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"AWS GovCloud (US-East)","279.5900000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3830000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"AWS GovCloud (US-East)","3352.1600000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.5920000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"Asia Pacific (Tokyo)","683.2800000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.9360000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"US East (N. Virginia)","2471.0500000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","3.3850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"US West (Oregon)","183.9600000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.2520000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"Asia Pacific (Singapore)","1565.8500000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.1450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"Canada (Central)","205.1300000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.2810000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"EU (Paris)","237.9800000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.3260000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"EU (Frankfurt)","3300.3300000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.5210000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"EU (Ireland)","2018.4500000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.7650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"EU (Paris)","2859.4100000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","3.9170000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"AWS GovCloud (US)","251.1200000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.3440000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"AWS GovCloud (US-East)","164.9800000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2260000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"EU (Paris)","2112.6200000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.8940000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"US West (Oregon)","1449.7800000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","1.9860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"EU (Paris)","476.6900000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.6530000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"Middle East (Bahrain)","654.8100000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.8970000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"US East (N. Virginia)","183.9600000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.2520000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"EU (London)","2087.0700000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.8590000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"EU (Ireland)","148.9200000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2040000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.24xlarge",AWS,1yr,"US East (N. Virginia)","2652.8200000",convertible,"Linux/UNIX (Amazon VPC), m5ad.24xlarge reserved instance applied","3.6340000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"Asia Pacific (Mumbai)","3160.9000000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","4.3300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"Canada (Central)","1230.0500000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","1.6850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"EU (Paris)","621.2300000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.8510000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"EU (Ireland)","126.2900000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1730000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"US East (Ohio)","367.9200000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.5040000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"Asia Pacific (Singapore)","938.78000000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.2860000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"US East (Ohio)","60.5900000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.0830000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"EU (London)","3130.9700000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.2890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"AWS GovCloud (US)","2640.4100000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.6170000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"Asia Pacific (Seoul)","246.7400000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3380000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.large",AWS,1yr,"Asia Pacific (Singapore)","70.0800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.large reserved instance applied","0.0960000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"Asia Pacific (Hong Kong)","83.95000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1150000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"EU (Ireland)","3027.3100000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.1470000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"Asia Pacific (Sydney)","558.4500000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"EU (Paris)","3728.8400000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.1080000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"Asia Pacific (Tokyo)","1159.9700000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.5890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"EU (Ireland)","504.4300000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.6910000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"Asia Pacific (Singapore)","64.9700000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"EU (Paris)","3728.8400000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.1080000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"Canada (Central)","51.1000000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0700000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"Asia Pacific (Mumbai)","131.4000000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.1800000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"US West (N. California)","563.5600000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"EU (Frankfurt)","648.9700000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.8890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"AWS GovCloud (US-East)","3020.0100000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","4.1370000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"Middle East (Bahrain)","163.5200000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2240000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"AWS GovCloud (US-East)","502.9700000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.6890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"US East (N. Virginia)","60.5900000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.0830000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"Asia Pacific (Singapore)","3672.6300000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.0310000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"Canada (Central)","2460.1000000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","3.3700000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"EU (London)","521.9500000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7150000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"Asia Pacific (Seoul)","1481.1700000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.0290000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"Canada (Central)","3252.1500000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","4.4550000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"US East (N. Virginia)","1235.8900000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","1.6930000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"Asia Pacific (Seoul)","1746.8900000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.3930000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"Asia Pacific (Mumbai)","435.8100000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.5970000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"AWS GovCloud (US-East)","125.5600000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"US East (N. Virginia)","45.9900000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0630000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"EU (Paris)","310.9800000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4260000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"Asia Pacific (Hong Kong)","71.5400000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0980000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.2xlarge",AWS,1yr,"Asia Pacific (Sydney)","300.0300000",convertible,"Linux/UNIX (Amazon VPC), m5ad.2xlarge reserved instance applied","0.4110000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"AWS GovCloud (US-East)","659.9200000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.9040000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"Asia Pacific (Singapore)","2817.0700000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","3.8590000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"Asia Pacific (Tokyo)","580.3500000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7950000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"Asia Pacific (Singapore)","117.5300000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1610000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","2295.8500000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","3.1450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"US East (Ohio)","735.11000000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.0070000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"Middle East (Bahrain)","1665.1300000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.2810000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"Middle East (Bahrain)","1308.8900000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.7930000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","2018.4500000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.7650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"Asia Pacific (Seoul)","493.4800000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.6760000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"EU (Frankfurt)","3300.3300000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.5210000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"Asia Pacific (Sydney)","655.5400000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.8980000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"Asia Pacific (Mumbai)","2107.5100000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","2.8870000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.2xlarge",AWS,1yr,"US East (N. Virginia)","221.1900000",convertible,"Linux/UNIX (Amazon VPC), m5ad.2xlarge reserved instance applied","0.3030000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"AWS GovCloud (US)","1676.0800000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.2960000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"Middle East (Bahrain)","277.4000000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3800000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","4036.9000000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","5.5300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"US West (N. California)","127.0200000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1740000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"EU (London)","307.3300000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4210000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"South America (Sao Paulo)","151.8400000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.2080000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"Asia Pacific (Tokyo)","2049.1100000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.8070000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"Canada (Central)","455.5200000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.6240000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"EU (Paris)","3168.9300000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.3410000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"US West (N. California)","63.5100000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0870000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.4xlarge",AWS,1yr,"AWS GovCloud (US)","600.7900000",convertible,"Linux/UNIX (Amazon VPC), m5ad.4xlarge reserved instance applied","0.8230000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"AWS GovCloud (US-East)","1006.6700000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.3790000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"Asia Pacific (Tokyo)","145.2700000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1990000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"Canada (Central)","1822.8100000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.4970000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"Asia Pacific (Sydney)","3350.7000000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.5900000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"EU (Ireland)","908.85000000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.2450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"EU (Stockholm)","141.6200000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.1940000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"Asia Pacific (Tokyo)","3480.6400000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.7680000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"Middle East (Bahrain)","1963.7000000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.6900000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"EU (Stockholm)","2885.6900000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","3.9530000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"EU (Paris)","65.7000000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0900000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"South America (Sao Paulo)","606.6300000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.8310000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.xlarge",AWS,1yr,"Asia Pacific (Singapore)","140.1600000",convertible,"Linux/UNIX (Amazon VPC), m5ad.xlarge reserved instance applied","0.1920000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"US East (Ohio)","205.8600000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.2820000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.2xlarge",AWS,1yr,"US East (Ohio)","221.1900000",convertible,"Linux/UNIX (Amazon VPC), m5ad.2xlarge reserved instance applied","0.3030000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"EU (Paris)","59.8600000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0820000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"AWS GovCloud (US-East)","139.4300000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1910000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"EU (Ireland)","2379.8000000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","3.2600000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"US East (Ohio)","1647.6100000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","2.2570000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.xlarge",AWS,1yr,"Asia Pacific (Singapore)","153.3000000",convertible,"Linux/UNIX (Amazon VPC), m5d.xlarge reserved instance applied","0.2100000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.4xlarge",AWS,1yr,"Canada (Central)","495.6700000",convertible,"Linux/UNIX (Amazon VPC), m5ad.4xlarge reserved instance applied","0.6790000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"EU (Frankfurt)","62.0500000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.large",AWS,1yr,"Asia Pacific (Mumbai)","54.7500000",convertible,"Linux/UNIX (Amazon VPC), m5.large reserved instance applied","0.0750000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"EU (Ireland)","3570.4300000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","4.8910000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.16xlarge",AWS,1yr,"US East (Ohio)","1933.0400000",convertible,"Linux/UNIX (Amazon VPC), m5d.16xlarge reserved instance applied","2.6480000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"EU (Ireland)","1784.8500000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.4450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"EU (Stockholm)","3400.3400000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","4.6580000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","1345.3900000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.8430000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"EU (Ireland)","252.5800000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3460000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"Canada (Central)","1084.0500000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.4850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"US West (Oregon)","966.52000000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.3240000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.4xlarge",AWS,1yr,"Asia Pacific (Singapore)","469.3900000",convertible,"Linux/UNIX (Amazon VPC), m5a.4xlarge reserved instance applied","0.6430000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"Asia Pacific (Tokyo)","130.6700000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1790000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"Asia Pacific (Singapore)","1408.9000000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","1.9300000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.12xlarge",AWS,1yr,"Asia Pacific (Sydney)","1801.6400000",convertible,"Linux/UNIX (Amazon VPC), m5ad.12xlarge reserved instance applied","2.4680000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"EU (Frankfurt)","549.6900000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7530000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"EU (Frankfurt)","1492.1200000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","2.0440000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.4xlarge",AWS,1yr,"Asia Pacific (Sydney)","600.7900000",convertible,"Linux/UNIX (Amazon VPC), m5ad.4xlarge reserved instance applied","0.8230000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.24xlarge",AWS,1yr,"AWS GovCloud (US-East)","3352.1600000",convertible,"Linux/UNIX (Amazon VPC), m5.24xlarge reserved instance applied","4.5920000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.large",AWS,1yr,"Canada (Central)","62.0500000",convertible,"Linux/UNIX (Amazon VPC), m5ad.large reserved instance applied","0.0850000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.16xlarge",AWS,1yr,"US West (N. California)","2254.9700000",convertible,"Linux/UNIX (Amazon VPC), m5.16xlarge reserved instance applied","3.0890000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"Middle East (Bahrain)","554.8000000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7600000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"EU (Ireland)","227.0300000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.3110000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"Asia Pacific (Mumbai)","108.7700000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1490000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"Asia Pacific (Tokyo)","3139.7300000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","4.3010000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"AWS GovCloud (US-East)","1319.8400000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.8080000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.2xlarge",AWS,1yr,"Asia Pacific (Sydney)","251.1200000",convertible,"Linux/UNIX (Amazon VPC), m5a.2xlarge reserved instance applied","0.3440000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.metal",AWS,1yr,"Asia Pacific (Singapore)","3672.6300000",convertible,"Linux/UNIX (Amazon VPC), m5d.metal reserved instance applied","5.0310000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.large",AWS,1yr,"Asia Pacific (Sydney)","81.76000000",convertible,"Linux/UNIX (Amazon VPC), m5d.large reserved instance applied","0.1120000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"US East (N. Virginia)","1103.0300000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","1.5110000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"US East (N. Virginia)","91.98000000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1260000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"AWS GovCloud (US-East)","1509.6400000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","2.0680000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"Asia Pacific (Seoul)","291.2700000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.3990000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"EU (Paris)","118.9900000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1630000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.24xlarge",AWS,1yr,"EU (Stockholm)","3400.3400000",convertible,"Linux/UNIX (Amazon VPC), m5d.24xlarge reserved instance applied","4.6580000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.metal",AWS,1yr,"Middle East (Bahrain)","3330.2600000",convertible,"Linux/UNIX (Amazon VPC), m5.metal reserved instance applied","4.5620000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.12xlarge",AWS,1yr,"EU (Paris)","1430.0700000",convertible,"Linux/UNIX (Amazon VPC), m5a.12xlarge reserved instance applied","1.9590000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.12xlarge",AWS,1yr,"Asia Pacific (Sydney)","1966.6200000",convertible,"Linux/UNIX (Amazon VPC), m5d.12xlarge reserved instance applied","2.6940000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.2xlarge",AWS,1yr,"Asia Pacific (Hong Kong)","286.8900000",convertible,"Linux/UNIX (Amazon VPC), m5.2xlarge reserved instance applied","0.3930000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"South America (Sao Paulo)","1213.2600000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.6620000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"AWS GovCloud (US)","139.4300000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1910000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"EU (Frankfurt)","137.2400000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1880000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.8xlarge",AWS,1yr,"US West (N. California)","1127.8500000",convertible,"Linux/UNIX (Amazon VPC), m5.8xlarge reserved instance applied","1.5450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"Asia Pacific (Seoul)","123.3700000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1690000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.4xlarge",AWS,1yr,"Asia Pacific (Singapore)","559.1800000",convertible,"Linux/UNIX (Amazon VPC), m5ad.4xlarge reserved instance applied","0.7660000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"EU (Frankfurt)","324.8500000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.4450000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.12xlarge",AWS,1yr,"EU (Paris)","1584.8300000",convertible,"Linux/UNIX (Amazon VPC), m5.12xlarge reserved instance applied","2.1710000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"Canada (Central)","541.6600000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.7420000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5ad.2xlarge",AWS,1yr,"Asia Pacific (Singapore)","279.5900000",convertible,"Linux/UNIX (Amazon VPC), m5ad.2xlarge reserved instance applied","0.3830000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.4xlarge",AWS,1yr,"AWS GovCloud (US)","558.4500000",convertible,"Linux/UNIX (Amazon VPC), m5.4xlarge reserved instance applied","0.7650000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.large",AWS,1yr,"Asia Pacific (Tokyo)","65.7000000",convertible,"Linux/UNIX (Amazon VPC), m5a.large reserved instance applied","0.0900000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.2xlarge",AWS,1yr,"EU (Stockholm)","283.2400000",convertible,"Linux/UNIX (Amazon VPC), m5d.2xlarge reserved instance applied","0.3880000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"US East (N. Virginia)","735.11000000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.0070000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5.xlarge",AWS,1yr,"US East (Ohio)","102.9300000",convertible,"Linux/UNIX (Amazon VPC), m5.xlarge reserved instance applied","0.1410000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.24xlarge",AWS,1yr,"US East (N. Virginia)","2205.3300000",convertible,"Linux/UNIX (Amazon VPC), m5a.24xlarge reserved instance applied","3.0210000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.4xlarge",AWS,1yr,"AWS GovCloud (US)","659.9200000",convertible,"Linux/UNIX (Amazon VPC), m5d.4xlarge reserved instance applied","0.9040000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"US East (N. Virginia)","966.52000000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.3240000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.xlarge",AWS,1yr,"Asia Pacific (Sydney)","125.5600000",convertible,"Linux/UNIX (Amazon VPC), m5a.xlarge reserved instance applied","0.1720000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5d.8xlarge",AWS,1yr,"AWS GovCloud (US)","1319.8400000",convertible,"Linux/UNIX (Amazon VPC), m5d.8xlarge reserved instance applied","1.8080000000","Amazon Elastic Compute Cloud",Shared,Reserved
+"m5a.8xlarge",AWS,1yr,"AWS GovCloud (US)","1005.2100000",convertible,"Linux/UNIX (Amazon VPC), m5a.8xlarge reserved instance applied","1.3770000000","Amazon Elastic Compute Cloud",Shared,Reserved

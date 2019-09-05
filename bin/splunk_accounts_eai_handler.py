@@ -85,8 +85,6 @@ class SplunkAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
         conf_handler_path = '%s/%s' % (
         self.get_conf_handler_path_name('splunk_accounts', 'nobody'), conf_stanza)
 
-        /services/asdf/sadf/asdf/rankings + '/' + name
-
         # Create post args - remove name to ensure edit instead of create
         splunk_accounts_conf_postargs = {
             'label': params['label'],
