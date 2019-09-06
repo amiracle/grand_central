@@ -12,6 +12,35 @@
   </fieldset>
   <row>
     <panel>
+      <title>Map of Successful Deployments</title>
+      <map>
+        <title>Accounts Setup Geographically</title>
+        <search>
+          <query>| rest /servicesNS/nobody/grand-central/grand_central_aws_accounts  | rename grand_central_aws_accounts_link_alternate as grand_central_aws_account_link_alternate | join type=left grand_central_aws_account_link_alternate [| rest /servicesNS/nobody/grand-central/deployed_cloudformation_templates]  | rename aws_region AS region | join region type=outer [| inputlookup regions] | geostats latfield=lat longfield=lon count by aws_account_id</query>
+          <earliest>$time.earliest$</earliest>
+          <latest>$time.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="mapping.type">marker</option>
+      </map>
+    </panel>
+    <panel>
+      <title>Successful Deployments by Region</title>
+      <table>
+        <title>Regions</title>
+        <search>
+          <query>| rest /servicesNS/nobody/grand-central/grand_central_aws_accounts  | rename grand_central_aws_accounts_link_alternate as grand_central_aws_account_link_alternate | join type=left grand_central_aws_account_link_alternate [| rest /servicesNS/nobody/grand-central/deployed_cloudformation_templates] | stats count by aws_region, aws_account_id | rename aws_region AS Region, aws_account_id AS "Account ID", count AS "Deployments"</query>
+          <earliest>$time.earliest$</earliest>
+          <latest>$time.latest$</latest>
+        </search>
+        <option name="count">10</option>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
       <title>Accounts in Organization Missing Deployments</title>
       <table>
         <search>

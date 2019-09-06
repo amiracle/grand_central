@@ -4,3 +4,4 @@ default/splunk_accounts.conf
 default/passwords.conf
 default/grand_central_aws_accounts.conf
 default/data/ui/views/dcaas.xml
+default/grand_central_aws_accounts.conf
