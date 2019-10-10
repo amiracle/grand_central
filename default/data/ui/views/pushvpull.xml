@@ -81,7 +81,7 @@
 | stats  sum(monthly_cost) AS "Cost" 
 | eval ha_cost=Cost*$ha$*$hfs$ 
 | eval network_cost=(($dv$*$perc$)*.15)*30 
-| join [| inputlookup aws_s3_storage_cost 
+| join [| inputlookup s3_storage_cost.csv 
 | search Location="$region$" 
 | eval storage_cost=PricePerUnit*$dv$*30*$perc$
 | table storage_cost] 
@@ -196,7 +196,7 @@ monthly_cost&lt;=tonumber(mvindex(EndingRange,0)),tonumber(mvindex(PricePerUnit,
       <single>
         <title>S3 Storage Costs</title>
         <search>
-          <query>| inputlookup aws_s3_storage_cost | search Location="US East (N. Virginia)" | eval storage_cost=PricePerUnit*$dv$*30*$perc$ | table storage_cost</query>
+          <query>| inputlookup s3_storage_cost.csv | search Location="US East (N. Virginia)" | eval storage_cost=PricePerUnit*$dv$*30*$perc$ | table storage_cost</query>
           <earliest>$earliest$</earliest>
           <latest>$latest$</latest>
         </search>

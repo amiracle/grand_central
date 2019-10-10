@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
-<view template="grand-central:/templates/layout.html" type="html">
+<view template="grand_central:/templates/layout.html" type="html">
     <label>Grand Central Accounts</label>
 </view>

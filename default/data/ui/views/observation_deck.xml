@@ -12,24 +12,77 @@
   </fieldset>
   <row>
     <panel>
+      <single>
+        <title>Number of Organizations</title>
+        <search>
+          <query>| rest /servicesNS/nobody/grand_central/organizations | stats dc(ParentAccountId)</query>
+          <earliest>$time.earliest$</earliest>
+          <latest>$time.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="useColors">0</option>
+      </single>
+      <single>
+        <title>Number of Accounts</title>
+        <search>
+          <query>| rest /servicesNS/nobody/grand_central/organizations | stats count</query>
+          <earliest>$time.earliest$</earliest>
+          <latest>$time.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="useColors">0</option>
+      </single>
+      <single>
+        <title>Successful Deployments</title>
+        <search>
+          <query>| rest /servicesNS/nobody/grand_central/deployed_cloudformation_templates | stats count</query>
+          <earliest>$time.earliest$</earliest>
+          <latest>$time.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
       <title>Map of Successful Deployments</title>
       <map>
         <title>Accounts Setup Geographically</title>
         <search>
-          <query>| rest /servicesNS/nobody/grand-central/grand_central_aws_accounts  | rename grand_central_aws_accounts_link_alternate as grand_central_aws_account_link_alternate | join type=left grand_central_aws_account_link_alternate [| rest /servicesNS/nobody/grand-central/deployed_cloudformation_templates]  | rename aws_region AS region | join region type=outer [| inputlookup regions] | geostats latfield=lat longfield=lon count by aws_account_id</query>
+          <query>| rest /servicesNS/nobody/grand_central/deployed_cloudformation_templates | stats count by aws_region | rename aws_region AS region | join region type=outer [| inputlookup regions] | geostats latfield=lat longfield=lon count by region</query>
           <earliest>$time.earliest$</earliest>
           <latest>$time.latest$</latest>
         </search>
         <option name="drilldown">none</option>
         <option name="mapping.type">marker</option>
+        <option name="refresh.display">progressbar</option>
       </map>
     </panel>
     <panel>
       <title>Successful Deployments by Region</title>
+      <input type="dropdown" token="account_filter" searchWhenChanged="true">
+        <label>Account Filter</label>
+        <fieldForLabel>aws_account_id</fieldForLabel>
+        <fieldForValue>aws_account_id</fieldForValue>
+        <search>
+          <query>| rest /servicesNS/nobody/grand_central/deployed_cloudformation_templates | rex field=grand_central_aws_account_link_alternate "^(?:[^/\n]*/){5}(?P&lt;aws_account_id&gt;.+)" | stats count by  aws_account_id</query>
+          <earliest>-15m</earliest>
+          <latest>now</latest>
+        </search>
+        <delimiter>  OR </delimiter>
+        <choice value="*">All</choice>
+        <default>*</default>
+        <initialValue>*</initialValue>
+      </input>
       <table>
         <title>Regions</title>
         <search>
-          <query>| rest /servicesNS/nobody/grand-central/grand_central_aws_accounts  | rename grand_central_aws_accounts_link_alternate as grand_central_aws_account_link_alternate | join type=left grand_central_aws_account_link_alternate [| rest /servicesNS/nobody/grand-central/deployed_cloudformation_templates] | stats count by aws_region, aws_account_id | rename aws_region AS Region, aws_account_id AS "Account ID", count AS "Deployments"</query>
+          <query>| rest /servicesNS/nobody/grand_central/deployed_cloudformation_templates | rex field=grand_central_aws_account_link_alternate "^(?:[^/\n]*/){5}(?P&lt;aws_account_id&gt;.+)" | search aws_account_id=$account_filter$ | stats count AS "Deployments" ,values(aws_region) AS "Regions" by aws_account_id</query>
           <earliest>$time.earliest$</earliest>
           <latest>$time.latest$</latest>
         </search>
@@ -44,7 +97,7 @@
       <title>Accounts in Organization Missing Deployments</title>
       <table>
         <search>
-          <query>| rest /servicesNS/nobody/grand-central/grand_central_aws_accounts | rename grand_central_aws_accounts_link_alternate as grand_central_aws_account_link_alternate | join type=left grand_central_aws_account_link_alternate [| rest /servicesNS/nobody/grand-central/deployed_cloudformation_templates] | where data_collection_deployment_success=0 | stats  count,values(aws_account_id) AS "New Accounts" by data_collection_deployment_success, aws_account_email | table "New Accounts" aws_account_email</query>
+          <query>| rest /servicesNS/nobody/grand_central/grand_central_aws_accounts | rename grand_central_aws_accounts_link_alternate as grand_central_aws_account_link_alternate | join type=left grand_central_aws_account_link_alternate [| rest /servicesNS/nobody/grand_central/deployed_cloudformation_templates] | where data_collection_deployment_success=0 | stats  count,values(aws_account_id) AS "New Accounts" by data_collection_deployment_success, aws_account_email | table "New Accounts" aws_account_email</query>
           <earliest>$time.earliest$</earliest>
           <latest>$time.latest$</latest>
         </search>
@@ -52,63 +105,9 @@
         <option name="drilldown">cell</option>
         <option name="refresh.display">progressbar</option>
         <drilldown>
-          <link target="_blank">/app/grand-central/grand_central_accounts</link>
+          <link target="_blank">/app/grand_central/grand_central_accounts</link>
         </drilldown>
       </table>
-    </panel>
-  </row>
-  <row>
-    <panel>
-      <single>
-        <title>Number of Organizations</title>
-        <search>
-          <query>| rest /servicesNS/nobody/grand-central/organizations | stats dc(ParentAccountId)</query>
-          <earliest>$time.earliest$</earliest>
-          <latest>$time.latest$</latest>
-        </search>
-        <option name="drilldown">none</option>
-        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
-        <option name="refresh.display">progressbar</option>
-        <option name="useColors">0</option>
-      </single>
-      <single>
-        <title>Number of Accounts</title>
-        <search>
-          <query>| rest /servicesNS/nobody/grand-central/organizations | stats count</query>
-          <earliest>$time.earliest$</earliest>
-          <latest>$time.latest$</latest>
-        </search>
-        <option name="drilldown">none</option>
-        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
-        <option name="refresh.display">progressbar</option>
-        <option name="useColors">0</option>
-      </single>
-      <single>
-        <title>Successful Deployments</title>
-        <search>
-          <query>| rest /servicesNS/nobody/grand-central/grand_central_aws_accounts | rename grand_central_aws_accounts_link_alternate as grand_central_aws_account_link_alternate | join type=left grand_central_aws_account_link_alternate [| rest /servicesNS/nobody/grand-central/deployed_cloudformation_templates] | where data_collection_deployment_success&gt;=1 | stats count,values(aws_account_id) by data_collection_deployment_success</query>
-          <earliest>$time.earliest$</earliest>
-          <latest>$time.latest$</latest>
-        </search>
-        <option name="drilldown">none</option>
-      </single>
-    </panel>
-  </row>
-  <row>
-    <panel>
-      <chart>
-        <title>Cloud Providers</title>
-        <search>
-          <query>| makeresults | eval "Cloud Providers"=8, aws=5, gcp=2, azure=1 | table "Cloud Providers", aws, gcp, azure</query>
-          <earliest>$time.earliest$</earliest>
-          <latest>$time.latest$</latest>
-        </search>
-        <option name="charting.chart">column</option>
-        <option name="charting.chart.stackMode">default</option>
-        <option name="charting.drilldown">none</option>
-        <option name="charting.layout.splitSeries">0</option>
-        <option name="refresh.display">progressbar</option>
-      </chart>
     </panel>
   </row>
 </form>
