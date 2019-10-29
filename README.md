@@ -135,9 +135,7 @@ Download the credentials files into a single directory for all the accounts. Onc
 
 Adding Master Account
 
-
 Log into the Grand Central App and navigate to the Accounts Section.  
-
 
 Click on the “New Organization Master Account” button: 
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_1.png)
@@ -190,24 +188,19 @@ Finally, now let’s deploy data collection to all these accounts:
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_7.png)
 
 Select the AWS accounts, regions and data source(s) you want to send into Splunk and click Deploy.
-<<<<<<< HEAD
 
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_8.png)
 
 Splunk will communicate with AWS and begin deploying the CloudFormation templates in all the accounts and regions you've selected:
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_9.png)
+
 
 In the Observation Deck dashboard you will see the succesfully deployed Accounts and Regions:
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_10.png)
-
-=======
-
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_8.png)
 
 Splunk will communicate with AWS and begin deploying the CloudFormation templates in all the accounts and regions you've selected:
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_9.png)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_8.png)
 
 In the Observation Deck dashboard you will see the succesfully deployed Accounts and Regions:
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_10.png)
->>>>>>> dacb26e2dfd1f07812d3de1f51415adedcc34162
+
 
