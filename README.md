@@ -7,7 +7,7 @@
 
 Grand Central User's Guide :
 
-Version 1.0
+Version 1.1
 
 
 
@@ -22,15 +22,15 @@ Please refer to the Amazon Web Services documentation on how to get started with
 Before Deploying Grand Central
 You will need to be able to create an IAM User in the Master Account and the sub accounts that will be added into management under Splunk. By default there will be two IAM policies created, one to list all the accounts in the Organization and the second will be a deployment policy. 
 
+```
+IAM Role Creation Shortcut
 
-#### Steps for installing and running Grand Central
+1. Open Cloudformation Template in target account and run https://grandcentraldeployment.s3.amazonaws.com/CFTemplates_GCDeployer_User.json 
 
-##### 1. Open Cloudformation Template in target account and run https://grandcentraldeployment.s3.amazonaws.com/CFTemplates_GCDeployer_User.json 
+2. Copy the Access Key / Secret Key from CloudFormation Output
 
-##### 2. Copy the Access Key / Secret Key
-
-##### 3. Install grand_central.spl file from github
-
+3. Install grand_central.spl file from github
+```
 	
 Setting up your Grand Central Environment
 You will need to create an IAM User in your master account that has a policy with access to list organizations. Here is an example of the JSON Policy :
