@@ -8,3 +8,4 @@ default/grand_central_aws_accounts.conf
 metadata/local.meta
 *.pyc
 local/deployed_cloudformation_templates.conf
+.DS_Store
