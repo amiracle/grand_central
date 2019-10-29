@@ -182,6 +182,7 @@ Upload your file:
 
 Now, all your accounts should have their credentials added to your Splunk Deployment: 
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_6a.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_5a.png?)
 
 Finally, now let’s deploy data collection to all these accounts: 
 
