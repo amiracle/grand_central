@@ -4,12 +4,9 @@
 
 ### This Splunk based app relies on the work done by Project Trumpet and the AWS Organizational model.
 
-
 Grand Central User's Guide :
 
 Version 1.1
-
-
 
 Getting Started
 
@@ -135,14 +132,13 @@ Download the credentials files into a single directory for all the accounts. Onc
 
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_13.png)
 
-Adding Master Account
+### Adding Master Account
 
 Log into the Grand Central App and navigate to the Accounts Section.  
 
-Click on the “New Organization Master Account” button: 
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_1.png)
 
-The Master Account will now be added to your console: 
+Click on the “New Organization Master Account” button and the Master Account will now be added to your console: 
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_12.png)
 
 Next, validate this IAM user has access to list all the accounts in the organization: 
