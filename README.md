@@ -129,8 +129,12 @@ IAM Policy - Grand_Central_Deployer_Policy :
  
 ## Credential Smusher
 Download the credentials files into a single directory for all the accounts. Once you have all the files (e.g. credentials.csv, credentials-1.csv) then run the credentials_smusher.py which will create all_account_credentials.json. 
-
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_13.png?)
+```
+bash$ cd credentials/
+bash$ python credentials_smusher.py
+bash$ ls
+all_accounts.json
+```
 
 ### Adding Master Account
 
@@ -168,10 +172,11 @@ BYOL Cloud Deployments
 ```
 https://<your-hec-url>:8088 
 ```
-
+### Add Splunk HEC endpoints
 Where <customer_name> is your stack name. The port (:443) needs to be put in the URL in order for this system to work.
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_6.png?)
 
+### Credential Upload
 Now let’s bulk upload your credentials file (all_accounts.json) that you created from all your credential.csv files: 
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_11.png?)
 
@@ -182,6 +187,7 @@ Now, all your accounts should have their credentials added to your Splunk Deploy
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_6a.png?)
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_5a.png?)
 
+### Configure Bulk Data Collection
 Finally, now let’s deploy data collection to all these accounts: 
 
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_7.png?)
