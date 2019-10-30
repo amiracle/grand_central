@@ -2,7 +2,7 @@
 
 ## Manage and Monitor your Cloud Data Providers in Splunk from one centralized data platform.
 
-### This Splunk based app relies on the work done by Project Trumpet and the AWS Organizational model.
+### This Splunk based app relies on the work done by [Project Trumpet](https://www.splunk.com/blog/2018/09/17/automating-aws-data-ingestion-into-splunk.html) and the AWS Organizational model.
 
 Grand Central User's Guide :
 
@@ -135,13 +135,12 @@ Download the credentials files into a single directory for all the accounts. Onc
 ### Adding Master Account
 
 Log into the Grand Central App and navigate to the Accounts Section.  
-
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_1.png)
 
 Click on the “New Organization Master Account” button and the Master Account will now be added to your console: 
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_12.png)
 
-Next, validate this IAM user has access to list all the accounts in the organization: 
+Next, validate this IAM user has access to list all the accounts in the organization. Click on the Action button and select 
 
 All the available accounts should show up in a Splunk Search window:  
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_3.png)
@@ -191,8 +190,7 @@ Select the AWS accounts, regions and data source(s) you want to send into Splunk
 
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_8.png)
 
-Splunk will communicate with AWS and begin deploying the CloudFormation templates in all the accounts and regions you've selected:
-
+Splunk will communicate with AWS and begin deploying the CloudFormation templates in all the accounts and regions you've selected.
 
 In the Observation Deck dashboard you will see the succesfully deployed Accounts and Regions:
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_10.png)
