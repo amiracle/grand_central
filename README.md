@@ -150,6 +150,7 @@ Now add the accounts into management:
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_4.png)
 
 Click the Add button: 
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_14.png)
 
 All the accounts in your organization will now show up in Splunk :  
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_5.png)
