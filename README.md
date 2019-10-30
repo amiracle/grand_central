@@ -122,7 +122,7 @@ IAM Policy - Grand_Central_Deployer_Policy :
                 "iam:ListUsers",
                 "iam:GetUser",
                 "s3:GetBucketLocation",
-	      "lambda:RemovePermission"
+	        "lambda:RemovePermission"
             ],
             "Resource": "*"
         }
@@ -133,31 +133,33 @@ IAM Policy - Grand_Central_Deployer_Policy :
 ## Credential Smusher
 Download the credentials files into a single directory for all the accounts. Once you have all the files (e.g. credentials.csv, credentials-1.csv) then run the credentials_smusher.py which will create all_account_credentials.json. 
 
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_13.png)
+
 Adding Master Account
 
 Log into the Grand Central App and navigate to the Accounts Section.  
 
 Click on the “New Organization Master Account” button: 
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_1.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_1.png)
 
 The Master Account will now be added to your console: 
-
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_12.png)
 
 Next, validate this IAM user has access to list all the accounts in the organization: 
 
 All the available accounts should show up in a Splunk Search window:  
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_3.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_3.png)
 
 Now add the accounts into management:  
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_4.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_4.png)
 
 Click the Add button: 
 
 All the accounts in your organization will now show up in Splunk :  
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_5.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_5.png)
 
 Now, add the destination where you will be sending your data. This is typically a Firehose endpoint on your Splunk Cloud Deployment. 
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_6.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_6.png)
 
 Here is an example of how you should fill out the fields: 
 
@@ -172,32 +174,32 @@ https://<your-hec-url>:8088
 ```
 
 Where <customer_name> is your stack name. The port (:443) needs to be put in the URL in order for this system to work.
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_6.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_6.png)
 
 Now let’s bulk upload your credentials file (all_accounts.json) that you created from all your credential.csv files: 
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_11.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_11.png)
 
 
 Upload your file: 
 
 Now, all your accounts should have their credentials added to your Splunk Deployment: 
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_6a.png?)
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_5a.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_6a.png)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_5a.png)
 
 Finally, now let’s deploy data collection to all these accounts: 
 
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_7.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_7.png)
 
 Select the AWS accounts, regions and data source(s) you want to send into Splunk and click Deploy.
 
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_8.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_8.png)
 
 Splunk will communicate with AWS and begin deploying the CloudFormation templates in all the accounts and regions you've selected:
 
 
 In the Observation Deck dashboard you will see the succesfully deployed Accounts and Regions:
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_10.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_10.png)
 
 Splunk will communicate with AWS and begin deploying the CloudFormation templates in all the accounts and regions you've selected:
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_9.png?)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_9.png)
 
