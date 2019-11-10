@@ -23,8 +23,11 @@ You will need to be able to create an IAM User in the Master Account and the sub
 ```
 IAM Role Creation Shortcut (beta)
 
-1. Open Cloudformation Template in target account and run https://grandcentraldeployment.s3.amazonaws.com/CFTemplates_GCDeployer_User.json 
+1. Open Cloudformation Template in target account and run :
+```
+https://grandcentraldeployment.s3.amazonaws.com/CFTemplates_GCDeployer_User.json 
 
+```
 2. Copy the Access Key / Secret Key from CloudFormation Output
 
 3. Install grand_central.spl file from github
