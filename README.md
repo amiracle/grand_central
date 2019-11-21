@@ -411,4 +411,3 @@ In the Observation Deck dashboard you will see the succesfully deployed Accounts
 Splunk will communicate with AWS and begin deploying the CloudFormation templates in all the accounts and regions you've selected:
 ![master_account]( https://grandcentraldeployment.s3.amazonaws.com/gc_9.png?)
 
->>>>>>> 22a705facee9e15258939bd88b78ed67d5852728
