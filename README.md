@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Grand Central App for Splunk
 
 ## Manage and Monitor your Cloud Data Providers in Splunk from one centralized data platform.
@@ -132,7 +132,7 @@ IAM Policy - Grand_Central_Deployer_Policy :
 ``` 
  
 ## Credential Smusher
-Download the credentials files into a single directory for all the accounts. Once you have all the files (e.g. credentials.csv, credentials-1.csv) then run the credentials_smusher.py which will create all_account_credentials.json. 
+Download the credentials files into a single directory for all the accounts. Once you have all the files (e.g. credentials.csv, credentials-1.csv or accessKey.csv) then run the credentials_smusher.py which will create all_account_credentials.json. 
 
 Adding Master Account
 
