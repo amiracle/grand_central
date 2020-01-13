@@ -139,26 +139,50 @@ Adding Master Account
 Log into the Grand Central App and navigate to the Accounts Section.  
 
 Click on the “New Organization Master Account” button: 
-![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_01.png)
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/01_gc.png)
 
-The Master Account will now be added to your console: 
+Add the Master Account access key / secret key to Splunk: 
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/02_gc.png)
 
+The Master Account should now show up in Splunk:
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/03_.png)
 
-Next, validate this IAM user has access to list all the accounts in the organization: 
-
-All the available accounts should show up in a Splunk Search window:  
-![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_03.png)
-
-Now add the accounts into management:  
-![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_04.png)
+Once the Master Account has been added, now you should be able to view the accounts in the organization. Under Actions, navigate to the List All Accounts in the dropdown:  
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/04_gc.png)
 
 Click the Add button: 
 
 All the accounts in your organization will now show up in Splunk :  
-![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_05.png)
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/05_gc.png)
+
+In order to add the discovered accounts into Splunk, select "Add Acounts in Organizaion to Grand Central" in the Actions dropdown:
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/screenshots/06_gc.png)
+
+Click the add button:
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/07_gc.png)
+
+All the accounts should now show up under management in Splunk:
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/08_gc.png)
+
+```
+## Bulk Credentials Upload - two step process : 
+
+# Step 1 - get the credential files
+Download all the credential files created for each account into one directory on your local machine. 
+
+#Step 2 - Run credentials_musher.py
+Run the credentials_musher.py python script against the directory containing your credentials.csv or AccessKey.csv files.
+
+all_account_accessKeys.json file created.
+```
+Take the all_account_accessKey.json file (or all_account_credentials.json) and hit the Bulk Credentials Upload button and upload the file: 
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/09_gc.png)
+
+After uploading the file, all of your accounts should be set to Configured:
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/10_gc.png) 
 
 Now, add the destination where you will be sending your data. This is typically a Firehose endpoint on your Splunk Cloud Deployment. 
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_06.png)
+
 
 Here is an example of how you should fill out the fields: 
 
@@ -173,38 +197,22 @@ https://<your-hec-url>:8088
 ```
 
 Where <customer_name> is your stack name. The port (:443) needs to be put in the URL in order for this system to work.
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_06.png)
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/11_gc.png)
 
-Now let’s bulk upload your credentials file (all_accounts.json) that you created from all your credential.csv files: 
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_11.png)
+Your Splunk Accounts should look like this when you're done:
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/12_gc.png) 
+
+### Pro Tip : For now, create a Splunk HEC token for each sourcetype, e.g. aws:cloudtrail for CloudTrail, aws:config for Config and aws:cloudwatchlogs:vpcflow for VPCFlow Logs
 
 
-Upload your file: 
+Finally, now let’s deploy data collection to all these accounts, click on the Bulk Deplyoment button and select your accounts, regions, destination and data source: 
 
-Now, all your accounts should have their credentials added to your Splunk Deployment: 
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_06.png)
+![master_account]( https://grandcentraldeployment.s3.amazonaws.com/screenshots/13_gc.png)
 
-Finally, now let’s deploy data collection to all these accounts: 
-
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_07.png)
-
-Select the AWS accounts, regions and data source(s) you want to send into Splunk and click Deploy.
-
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_08.png)
+Click Deploy.
 
 Splunk will communicate with AWS and begin deploying the CloudFormation templates in all the accounts and regions you've selected:
 
 
 In the Observation Deck dashboard you will see the succesfully deployed Accounts and Regions:
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_10.png)
-
-Splunk will communicate with AWS and begin deploying the CloudFormation templates in all the accounts and regions you've selected:
-![master_account]( https://grandcentraldeployment.s3.amazonaws.com/screenshots/gc_09.png)
-
-=======
-# Grand Central App for Splunk
-
-## Manage and Monitor your Cloud Data Providers in Splunk from one centralized data platform.
-
-### This Splunk based app relies on the work done by [Project Trumpet](https://www.splunk.com/blog/2018/09/17/automating-aws-data-ingestion-into-splunk.html) and the AWS Organizational model.
-
+![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/14_gc.png)
