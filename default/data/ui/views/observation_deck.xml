@@ -109,5 +109,26 @@
         </drilldown>
       </table>
     </panel>
+    <panel>
+      <title>Data Collection</title>
+      <table>
+        <title>Config Data Collection</title>
+        <search>
+          <query>sourcetype="aws:config*" | stats count by configurationItem.awsAccountId, configurationItem.awsRegion</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+      <table>
+        <title>CloudTrail</title>
+        <search>
+          <query>sourcetype="aws:cloudtrail" | stats count,values(resources{}.accountId) AS "AWS Account ID" by awsRegion | fields - count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
   </row>
 </form>

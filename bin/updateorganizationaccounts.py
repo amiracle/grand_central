@@ -76,7 +76,7 @@ class UpdateOrganizationAccountsCommand(GeneratingCommand):
 
     def generate(self):
         session_key = self._metadata.searchinfo.session_key
-        organizations_handler_path = '/servicesNS/nobody/grand-central/organizations'
+        organizations_handler_path = '/servicesNS/nobody/grand_central/organizations'
 
         debug_logger.info('action=organizations_accounts_update state=start pid=%s guid=%s' % (pid, guid))
         try:

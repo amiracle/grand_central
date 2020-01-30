@@ -78,7 +78,7 @@ class GetAWSPriceListCommand(GeneratingCommand):
 
     def generate(self):
         session_key = self._metadata.searchinfo.session_key
-        grand_central_aws_accounts_rest_path = '/servicesNS/%s/%s/grand_central_aws_accounts/%s' % ('nobody', 'grand-central', self.aws_master_account_id)
+        grand_central_aws_accounts_rest_path = '/servicesNS/%s/%s/grand_central_aws_accounts/%s' % ('nobody', 'grand_central', self.aws_master_account_id)
 
         grand_central_aws_accounts_eai_response_payload = simple_request_eai(grand_central_aws_accounts_rest_path, 'read', 'GET', session_key)
 
