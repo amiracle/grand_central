@@ -119,6 +119,7 @@ Next, each AWS Account will need to have the following IAM User and Policy creat
                 "lambda:RemovePermission",
                 "logs:DescribeLogGroups",
                 "logs:DescribeLogStreams",
+                "logs:PutSubscriptionFilter",
                 "logs:GetLogEvents",
                 "s3:CreateBucket",
                 "s3:DeleteBucket",
