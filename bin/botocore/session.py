@@ -196,9 +196,9 @@ class Session(object):
             handler = monitoring.Monitor(
                 adapter=monitoring.MonitorEventAdapter(),
                 publisher=monitoring.SocketPublisher(
-                    socket=socket.socket(socket.AF_INET, socket.SOCK_DGRAM),
-                    host='127.0.0.1',
-                    port=port,
+                   # socket=socket.socket(socket.AF_INET, socket.SOCK_DGRAM),
+                   # host='127.0.0.1',
+                    # port=port,
                     serializer=monitoring.CSMSerializer(
                         csm_client_id=client_id)
                 )
@@ -1014,3 +1014,4 @@ def get_session(env_vars=None):
     Return a new session object.
     """
     return Session(env_vars)
+
