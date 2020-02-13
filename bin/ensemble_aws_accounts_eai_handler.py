@@ -9,6 +9,7 @@ import hashlib
 import base_eai_handler
 import log_helper
 import boto3
+import botocore
 import json
 
 if sys.platform == 'win32':
@@ -27,6 +28,26 @@ class EnsembleAWSAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
         # Add our supported args
         for arg in ensemble_aws_accounts_schema.ALL_FIELDS:
             self.supportedArgs.addOptArg(arg)
+
+    def assumed_role_session(self, role_arn):
+        base_session = None
+        base_session = base_session or boto3.session.Session()._session
+        fetcher = botocore.credentials.AssumeRoleCredentialFetcher(
+            client_creator = base_session.create_client,
+            source_credentials = base_session.get_credentials(),
+            role_arn = role_arn,
+            extra_args = {
+            #    'RoleSessionName': None # set this if you want something non-default
+            }
+        )
+        creds = botocore.credentials.DeferredRefreshableCredentials(
+            method = 'assume-role',
+            refresh_using = fetcher.fetch_credentials,
+            time_fetcher = lambda: datetime.datetime.now(tzlocal())
+        )
+        botocore_session = botocore.session.Session()
+        botocore_session._credentials = creds
+        return boto3.Session(botocore_session = botocore_session)
 
     def handleList(self, confInfo):
         """
@@ -52,9 +73,12 @@ class EnsembleAWSAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
                 passwords_conf_payload = self.simple_request_eai(ensemble_aws_accounts['content']['aws_secret_key_link_alternate'], 'list', 'GET')
                 SECRET_KEY = passwords_conf_payload['entry'][0]['content']['clear_password']
 
+                aws_account_id = ensemble_aws_accounts['entry'][0]['content']['aws_account_id']
+                role_arn = "arn:aws:iam::{0}:role/SplunkDataCollectionCrossAccountRole".format(aws_account_id)
+                session = self.assumed_role_session(role_arn)
+
                 try:
-                    client = boto3.client('cloudformation', aws_access_key_id=ensemble_aws_accounts['content']['aws_access_key'],
-                                          aws_secret_access_key=SECRET_KEY)
+                    client = session.client('cloudformation', region_name=params['aws_region'])
                     response = client.describe_stacks(
                         StackName=ensemble_aws_accounts['name'],
                     )
@@ -187,6 +211,10 @@ class EnsembleAWSAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
         passwords_conf_payload = self.simple_request_eai(aws_secret_key_link_alternate, 'list', 'GET')
         SECRET_KEY = passwords_conf_payload['entry'][0]['content']['clear_password']
 
+        aws_account_id = ensemble_aws_accounts_eai_response_payload['entry'][0]['content']['aws_account_id']
+        role_arn = "arn:aws:iam::{0}:role/SplunkDataCollectionCrossAccountRole".format(aws_account_id)
+        session = self.assumed_role_session(role_arn)
+
         if params['template_link_alternate'] and params['template_link_alternate'] != '' and params['cloudformation_template_action'] and params['cloudformation_template_action'] == 'apply':
             # Get CloudFormation template string
             cloudformation_templates_conf_payload = self.simple_request_eai(params['template_link_alternate'], 'list', 'GET')
@@ -195,9 +223,9 @@ class EnsembleAWSAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
             with open(os.path.dirname(os.path.abspath(__file__)) + '/cloudformation_templates/' + template_filename) as json_file:
                 json_data = json.dumps(json.load(json_file))
 
+
             try:
-                client = boto3.client('cloudformation', aws_access_key_id=params['aws_access_key'],
-                    aws_secret_access_key=SECRET_KEY)
+                client = session.client('cloudformation', region_name=params['aws_region'])
                 response = client.create_stack(
                     StackName=params['name'],
                     TemplateBody=json_data,
@@ -210,11 +238,10 @@ class EnsembleAWSAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
                 raise admin.InternalException('Error connecting to AWS or deploying CloudFormation template %s' % e)
 
             ensemble_aws_accounts_conf_postargs['cloudformation_stack_id'] = response['StackId']
-
+    
         if params['cloudformation_template_action'] and params['cloudformation_template_action'] == 'remove':
             try:
-                client = boto3.client('cloudformation', aws_access_key_id=params['aws_access_key'],
-                                      aws_secret_access_key=SECRET_KEY)
+                client = session.client('cloudformation', region_name=params['aws_region'])
                 response = client.delete_stack(
                     StackName=params['name']
                 )
@@ -233,8 +260,7 @@ class EnsembleAWSAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
                 json_data = json.dumps(json.load(json_file))
 
             try:
-                client = boto3.client('cloudformation', aws_access_key_id=params['aws_access_key'],
-                                      aws_secret_access_key=SECRET_KEY)
+                client = session.client('cloudformation', region_name=params['aws_region'])
                 response = client.update_stack(
                     StackName=params['name'],
                     TemplateBody=json_data,

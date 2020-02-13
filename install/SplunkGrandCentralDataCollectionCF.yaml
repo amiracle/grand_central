@@ -1,0 +1,99 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: Creates a stack containing an IAM role used to grant
+  grant Grand Central access to create CloudFormation stacks
+  to enable collection of AWS logging data to send to Splunk
+
+Parameters:
+  GrandCentralInstanceProfileARN:
+    Type: String
+    Description: ARN of the instance profile on which Grand Central runs
+
+Resources:
+  SplunkDataCollectionCrossAccountRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: SplunkDataCollectionCrossAccountRole
+      AssumeRolePolicyDocument:
+        Statement:
+        - Effect: Allow
+          Principal:
+            AWS: !Ref GrandCentralInstanceProfileARN
+          Action:
+          - sts:AssumeRole
+  SplunkDataCollectionCrossAccountPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: SplunkDataCollectionIntegrationPolicy
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action:
+          - lambda:CreateFunction
+          - iam:GetAccountPasswordPolicy
+          - kinesis:Get*
+          - iam:CreateRole
+          - s3:CreateBucket
+          - iam:AttachRolePolicy
+          - lambda:GetFunctionConfiguration
+          - iam:PutRolePolicy
+          - kinesis:ListStreams
+          - s3:GetObjectAcl
+          - iam:DetachRolePolicy
+          - logs:GetLogEvents
+          - events:RemoveTargets
+          - lambda:DeleteFunction
+          - events:PutEvents
+          - s3:GetBucketPolicyStatus
+          - iam:GetRole
+          - events:DescribeRule
+          - lambda:InvokeFunction
+          - iam:GetAccessKeyLastUsed
+          - firehose:CreateDeliveryStream
+          - cloudformation:*
+          - iam:DeleteRole
+          - firehose:DescribeDeliveryStream
+          - s3:GetObject
+          - sts:AssumeRole
+          - logs:PutSubscriptionFilter
+          - s3:GetLifecycleConfiguration
+          - s3:GetBucketTagging
+          - logs:DescribeLogStreams
+          - events:PutRule
+          - s3:GetBucketLogging
+          - s3:ListBucket
+          - s3:GetAccelerateConfiguration
+          - s3:GetBucketPolicy
+          - firehose:DeleteDeliveryStream
+          - iam:PassRole
+          - sns:Get*
+          - sns:Publish
+          - iam:DeleteRolePolicy
+          - s3:DeleteBucket
+          - s3:PutBucketVersioning
+          - s3:GetBucketPublicAccessBlock
+          - logs:DescribeLogGroups
+          - kinesis:DescribeStream
+          - sns:List*
+          - events:PutTargets
+          - events:DeleteRule
+          - lambda:AddPermission
+          - s3:ListAllMyBuckets
+          - s3:GetBucketCORS
+          - s3:GetBucketLocation
+          - lambda:RemovePermission
+          Effect: Allow
+          Resource: "*"          
+      Roles: [!Ref SplunkDataCollectionCrossAccountRole]
+
+Outputs:
+  RoleId:
+    Description: The logical ID of the IAM role
+    Value: !Ref SplunkDataCollectionCrossAccountRole
+  RoleArn:
+    Description: The ARN of the IAM role
+    Value: !GetAtt [SplunkDataCollectionCrossAccountRole, Arn]
+  PolicyId:
+    Description: The logical ID of the IAM policy
+    Value: !Ref SplunkDataCollectionCrossAccountPolicy
