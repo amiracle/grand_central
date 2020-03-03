@@ -8,6 +8,9 @@ import base_eai_handler
 import log_helper
 import json
 import boto3
+import botocore
+import datetime
+from tzlocal import get_localzone
 
 if sys.platform == 'win32':
     import msvcrt
@@ -25,6 +28,26 @@ class DeployedCloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler)
         # Add our supported args
         for arg in deployed_cloudformation_templates_schema.ALL_FIELDS:
             self.supportedArgs.addOptArg(arg)
+
+    def assumed_role_session(self, role_arn):
+        base_session = None
+        base_session = base_session or boto3.session.Session()._session
+        fetcher = botocore.credentials.AssumeRoleCredentialFetcher(
+            client_creator = base_session.create_client,
+            source_credentials = base_session.get_credentials(),
+            role_arn = role_arn,
+            extra_args = {
+            #    'RoleSessionName': None # set this if you want something non-default
+            }
+        )
+        creds = botocore.credentials.DeferredRefreshableCredentials(
+            method = 'assume-role',
+            refresh_using = fetcher.fetch_credentials,
+            time_fetcher = lambda: datetime.datetime.now(get_localzone())
+        )
+        botocore_session = botocore.session.Session()
+        botocore_session._credentials = creds
+        return boto3.Session(botocore_session = botocore_session)
 
     def handleList(self, confInfo):
         """
@@ -50,15 +73,17 @@ class DeployedCloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler)
 
                 grand_central_aws_account_eai_response_payload = self.simple_request_eai(grand_central_aws_account_link_alternate, 'read', 'GET')
                 aws_access_key = grand_central_aws_account_eai_response_payload['entry'][0]['content']['aws_access_key']
-
                 aws_secret_key_link_alternate = grand_central_aws_account_eai_response_payload['entry'][0]['content']['aws_secret_key_link_alternate']
 
                 passwords_conf_payload = self.simple_request_eai(aws_secret_key_link_alternate, 'list', 'GET')
                 SECRET_KEY = passwords_conf_payload['entry'][0]['content']['clear_password']
 
+                aws_account_id = grand_central_aws_account_eai_response_payload['entry'][0]['content']['aws_account_id']
+                role_arn = "arn:aws:iam::{0}:role/SplunkDataCollectionCrossAccountRole".format(aws_account_id)
+                session = self.assumed_role_session(role_arn)
+
                 try:
-                    client = boto3.client('cloudformation', region_name=aws_region, aws_access_key_id=aws_access_key,
-                                          aws_secret_access_key=SECRET_KEY)
+                    client = session.client('cloudformation', region_name=aws_region)
                     response = client.describe_stacks(
                         StackName=cloudformation_stack_name,
                     )
@@ -160,9 +185,12 @@ class DeployedCloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler)
         passwords_conf_payload = self.simple_request_eai(aws_secret_key_link_alternate, 'list', 'GET')
         SECRET_KEY = passwords_conf_payload['entry'][0]['content']['clear_password']
 
+        aws_account_id = grand_central_aws_account_eai_response_payload['entry'][0]['content']['aws_account_id']
+        role_arn = "arn:aws:iam::{0}:role/SplunkDataCollectionCrossAccountRole".format(aws_account_id)
+        session = self.assumed_role_session(role_arn)
+
         try:
-            client = boto3.client('cloudformation', region_name=params['aws_region'], aws_access_key_id=aws_access_key,
-                                  aws_secret_access_key=SECRET_KEY)
+            client = session.client('cloudformation', region_name=params['aws_region'])
             response = client.create_stack(
                 StackName=params['cloudformation_stack_name'],
                 TemplateBody=json_data,
@@ -264,9 +292,12 @@ class DeployedCloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler)
         passwords_conf_payload = self.simple_request_eai(aws_secret_key_link_alternate, 'list', 'GET')
         SECRET_KEY = passwords_conf_payload['entry'][0]['content']['clear_password']
 
+        aws_account_id = grand_central_aws_account_eai_response_payload['entry'][0]['content']['aws_account_id']
+        role_arn = "arn:aws:iam::{0}:role/SplunkDataCollectionCrossAccountRole".format(aws_account_id)
+        session = self.assumed_role_session(role_arn)
+
         try:
-            client = boto3.client('cloudformation', region_name=params['aws_region'], aws_access_key_id=aws_access_key,
-                                  aws_secret_access_key=SECRET_KEY)
+            client = session.client('cloudformation', region_name=params['aws_region'])
             response = client.update_stack(
                 StackName=params['cloudformation_stack_name'],
                 TemplateBody=json_data,
@@ -329,9 +360,12 @@ class DeployedCloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler)
         passwords_conf_payload = self.simple_request_eai(aws_secret_key_link_alternate, 'list', 'GET')
         SECRET_KEY = passwords_conf_payload['entry'][0]['content']['clear_password']
 
+        aws_account_id = grand_central_aws_account_eai_response_payload['entry'][0]['content']['aws_account_id']
+        role_arn = "arn:aws:iam::{0}:role/SplunkDataCollectionCrossAccountRole".format(aws_account_id)
+        session = self.assumed_role_session(role_arn)
+
         try:
-            client = boto3.client('cloudformation', region_name=aws_region, aws_access_key_id=aws_access_key,
-                                  aws_secret_access_key=SECRET_KEY)
+            client = session.client('cloudformation', region_name=aws_region)
             response = client.delete_stack(
                 StackName=cloudformation_stack_name
             )
