@@ -9,3 +9,6 @@ metadata/local.meta
 *.pyc
 local/deployed_cloudformation_templates.conf
 .DS_Store
+local/grand_central_aws_accounts.conf
+local/passwords.conf
+local/splunk_accounts.conf
