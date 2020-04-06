@@ -35,7 +35,7 @@ class SplunkAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
 
         # Fetch from splunk accounts conf handler
         conf_handler_path = self.get_conf_handler_path_name('splunk_accounts', 'nobody')
-        splunk_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET')
+        splunk_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET', get_args={'count': -1})
 
         self.set_conf_info_from_eai_payload(confInfo, splunk_accounts_eai_response_payload)
 

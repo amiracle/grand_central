@@ -8,7 +8,7 @@
 
 Grand Central User's Guide :
 
-Version 1.1.1
+Version 1.2
 
 
 
@@ -117,10 +117,8 @@ Next, each AWS Account will need to have the following IAM User and Policy creat
                 "lambda:DeleteFunction",
                 "lambda:GetFunctionConfiguration",
                 "lambda:RemovePermission",
-                "logs:DeleteSubscriptionFilter",
                 "logs:DescribeLogGroups",
                 "logs:DescribeLogStreams",
-                "logs:PutSubscriptionFilter",
                 "logs:GetLogEvents",
                 "s3:CreateBucket",
                 "s3:DeleteBucket",

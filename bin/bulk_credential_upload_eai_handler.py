@@ -50,7 +50,7 @@ class BulkCredentialUploadEAIHandler(base_eai_handler.BaseEAIHandler):
         grand_central_aws_accounts_rest_path = '/servicesNS/%s/%s/grand_central_aws_accounts' % ('nobody', self.appName)
 
         grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(grand_central_aws_accounts_rest_path,
-                                                                                  'list', 'GET')
+                                                                                  'list', 'GET', get_args={'count': -1})
         grand_central_aws_accounts = {}
 
         for grand_central_aws_account in grand_central_aws_accounts_eai_response_payload['entry']:
@@ -107,7 +107,7 @@ class BulkCredentialUploadEAIHandler(base_eai_handler.BaseEAIHandler):
                 grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(grand_central_aws_accounts_rest_path, 'create', 'POST', post_args)
 
         grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(grand_central_aws_accounts_rest_path,
-                                                                                  'list', 'GET')
+                                                                                  'list', 'GET', get_args={'count': -1})
 
         self.set_conf_info_from_eai_payload(confInfo, grand_central_aws_accounts_eai_response_payload)
 

@@ -35,7 +35,7 @@ class CloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler):
 
         # Fetch from cloudformation_templates conf handler
         conf_handler_path = self.get_conf_handler_path_name('cloudformation_templates', 'nobody')
-        cloudformation_templates_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET')
+        cloudformation_templates_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET', get_args={'count': -1})
 
         # Add link alternate (without mgmt, scheme, host, port) to list response
         for cloudformation_template in cloudformation_templates_eai_response_payload['entry']:

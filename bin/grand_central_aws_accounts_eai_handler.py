@@ -41,7 +41,7 @@ class GrandCentralAWSAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
 
         # Fetch from grand_central_aws_accounts conf handler
         conf_handler_path = self.get_conf_handler_path_name('grand_central_aws_accounts', 'nobody')
-        grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET')
+        grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET', get_args={'count': -1})
 
         # Add link alternate (without mgmt, scheme, host, port) to list response
         for grand_central_aws_account in grand_central_aws_accounts_eai_response_payload['entry']:
@@ -115,7 +115,7 @@ class GrandCentralAWSAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
         params = self.validate_server_schema_params()
         conf_handler_path = '%s/%s' % (self.get_conf_handler_path_name('grand_central_aws_accounts', 'nobody'), conf_stanza)
 
-        grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET')
+        grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET', get_args={'count': -1})
         old_aws_access_key = grand_central_aws_accounts_eai_response_payload['entry'][0]['content']['aws_access_key']
         old_aws_secret_key_link_alternate = grand_central_aws_accounts_eai_response_payload['entry'][0]['content']['aws_secret_key_link_alternate']
 

@@ -4,12 +4,9 @@ import sys
 import splunk.admin as admin
 import organizations_schema
 import boto3
-import botocore
 import urllib3
 import base_eai_handler
 import log_helper
-import datetime
-from tzlocal import get_localzone
 
 if sys.platform == 'win32':
     import msvcrt
@@ -28,27 +25,6 @@ class OrganizationsEAIHandler(base_eai_handler.BaseEAIHandler):
         for arg in organizations_schema.ALL_FIELDS:
             self.supportedArgs.addOptArg(arg)
 
-
-    def assumed_role_session(self, role_arn):
-        base_session = None
-        base_session = base_session or boto3.session.Session()._session
-        fetcher = botocore.credentials.AssumeRoleCredentialFetcher(
-            client_creator = base_session.create_client,
-            source_credentials = base_session.get_credentials(),
-            role_arn = role_arn,
-            extra_args = {
-            #    'RoleSessionName': None # set this if you want something non-default
-            }
-        )
-        creds = botocore.credentials.DeferredRefreshableCredentials(
-            method = 'assume-role',
-            refresh_using = fetcher.fetch_credentials,
-            time_fetcher = lambda: datetime.datetime.now(get_localzone())
-        )
-        botocore_session = botocore.session.Session()
-        botocore_session._credentials = creds
-        return boto3.Session(botocore_session = botocore_session)
-
     def handleList(self, confInfo):
         """
         Called when user invokes the "list" action.
@@ -60,7 +36,7 @@ class OrganizationsEAIHandler(base_eai_handler.BaseEAIHandler):
 
         # Get the grand central account information for the organization account
         conf_handler_path = self.get_conf_handler_path_name('grand_central_aws_accounts', 'nobody')
-        grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET')
+        grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET', get_args={'count': -1})
 
         account_list_payload = {'entry': []}
 
@@ -78,11 +54,8 @@ class OrganizationsEAIHandler(base_eai_handler.BaseEAIHandler):
             passwords_conf_payload = self.simple_request_eai(aws_secret_key_link_alternate, 'list', 'GET')
             SECRET_KEY = passwords_conf_payload['entry'][0]['content']['clear_password']
 
-            role_arn = "arn:aws:iam::{0}:role/SplunkOrgListerCrossAccountRole".format(aws_account_id)
-            session = self.assumed_role_session(role_arn)
-
             # Make call to AWS API endpoint
-            client = session.client('organizations')
+            client = boto3.client('organizations', aws_access_key_id=aws_access_key, aws_secret_access_key=SECRET_KEY)
 
             response = client.list_accounts()
 
@@ -109,7 +82,7 @@ class OrganizationsEAIHandler(base_eai_handler.BaseEAIHandler):
         if aws_account_id != '0':
             # Get list of all Grand Central accounts
             conf_handler_path = self.get_conf_handler_path_name('grand_central_aws_accounts', 'nobody')
-            grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET')
+            grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET', get_args={'count': -1})
 
             account_id_to_account_map = {}
             # Build map of account_id/name to account information
@@ -118,7 +91,7 @@ class OrganizationsEAIHandler(base_eai_handler.BaseEAIHandler):
 
             # Get list of all AWS accounts in org
             organizations_rest_path = '/servicesNS/nobody/%s/organizations' % self.appName
-            organizations_eai_response_payload = self.simple_request_eai(organizations_rest_path, 'read', 'GET')
+            organizations_eai_response_payload = self.simple_request_eai(organizations_rest_path, 'list', 'GET', get_args={'count': -1})
 
             # If the account is not in the list of Grand Central accounts, add it
             grand_central_aws_accounts_rest_path = '/servicesNS/nobody/%s/grand_central_aws_accounts' % self.appName
@@ -161,7 +134,7 @@ class OrganizationsEAIHandler(base_eai_handler.BaseEAIHandler):
                         grand_central_specific_aws_account_rest_path, 'update', 'POST', post_args)
 
             conf_handler_path = self.get_conf_handler_path_name('grand_central_aws_accounts', 'nobody')
-            grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET')
+            grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET', get_args={'count': -1})
             self.set_conf_info_from_eai_payload(confInfo, grand_central_aws_accounts_eai_response_payload)
 
 
