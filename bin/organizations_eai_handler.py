@@ -61,7 +61,7 @@ class OrganizationsEAIHandler(base_eai_handler.BaseEAIHandler):
 
             self.update_account_list_payload(account_list_payload, response, aws_account_id)
 
-            if 'NextToken' in response:
+            while 'NextToken' in response:
                 response = client.list_accounts(NextToken=response['NextToken'])
 
                 self.update_account_list_payload(account_list_payload, response, aws_account_id)
