@@ -238,3 +238,7 @@ Splunk will communicate with AWS and begin deploying the CloudFormation template
 
 In the Observation Deck dashboard you will see the succesfully deployed Accounts and Regions:
 ![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/14_gc.png)
+
+# Binary File Declaration
+
+File: bin/python_terraform/terraform
