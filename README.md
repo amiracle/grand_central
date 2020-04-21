@@ -91,6 +91,7 @@ Next, each AWS Account will need to have the following IAM User and Policy creat
                 "events:PutEvents",
                 "events:PutRule",
                 "events:PutTargets",
+                "events:RemoveTargets",
                 "firehose:CreateDeliveryStream",
                 "firehose:DeleteDeliveryStream",
                 "firehose:DescribeDeliveryStream",
