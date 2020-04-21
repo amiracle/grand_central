@@ -120,6 +120,7 @@ Next, each AWS Account will need to have the following IAM User and Policy creat
                 "logs:DescribeLogGroups",
                 "logs:DescribeLogStreams",
                 "logs:GetLogEvents",
+                "logs:PutSubscriptionFilter",
                 "s3:CreateBucket",
                 "s3:DeleteBucket",
                 "s3:GetAccelerateConfiguration",
