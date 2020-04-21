@@ -88,6 +88,7 @@ Next, each AWS Account will need to have the following IAM User and Policy creat
                 "ec2:DescribeVolumes",
                 "ec2:DescribeVpcs",
                 "events:DescribeRule",
+                "events:DeleteRule",
                 "events:PutEvents",
                 "events:PutRule",
                 "events:PutTargets",
