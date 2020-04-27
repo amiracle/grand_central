@@ -184,7 +184,7 @@ Next, each AWS Account will need to have the following IAM User and Policy creat
                 "arn:aws:s3:::grandcentral*",
                 "arn:aws:s3:::*/*",
                 "arn:aws:config:*:*:config-rule/grandcentral*",
-                "arn:aws:firehose:*:002404001714:deliverystream/grandcentral*",
+                "arn:aws:firehose:*:*:deliverystream/grandcentral*",
                 "arn:aws:sqs:*:*:grandcentral*",
                 "arn:aws:iam::*:role/grandcentral*",
                 "arn:aws:iam::*:user/grandcentral*",
