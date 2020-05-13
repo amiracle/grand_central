@@ -10,6 +10,7 @@ Grand Central User's Guide :
 
 Version 1.2.1
 
+App Install File : https://grandcentraldeployment.s3.amazonaws.com/grand_central.spl
 
 
 Getting Started
