@@ -25,6 +25,8 @@ Before Deploying Grand Central
 
 You will need to be able to create an IAM User in the Master Account and the sub accounts that will be added into management under Splunk. By default there will be two IAM policies created, one to list all the accounts in the Organization and the second will be a deployment policy. 
 
+One click User Creation : https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://grandcentraldeployment.s3.amazonaws.com/CFTemplates_GCDeployer_User.json&stackName=GrandCentralIAMUser
+
 ```
 IAM Role Creation Shortcut (beta)
 
