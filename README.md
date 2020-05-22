@@ -11,7 +11,11 @@ Grand Central User's Guide :
 Version 1.2.1
 App Install File : https://grandcentraldeployment.s3.amazonaws.com/grand_central.spl
 
+<<<<<<< HEAD
 #### Getting Started
+=======
+App Install File : https://grandcentraldeployment.s3.amazonaws.com/grand_central.spl
+>>>>>>> 92790ef038178f202c5c448f260687aa26b2d64b
 
 ##### Amazon Web Services Requirements
 Grand Central works with the AWS Organizations framework and does not require either Landing Zone or Control Tower to work. By having the organization setup with multiple accounts, Grand Central will be able to discover the accounts and add into management within Splunk. 
@@ -23,6 +27,16 @@ Please refer to the Amazon Web Services documentation on how to get started with
 You will need to be able to create an IAM User in the Master Account and the sub accounts that will be added into management under Splunk. By default there will be two IAM policies created, one to list all the accounts in the Organization and the second will be a deployment policy. 
 
 One click User Creation : https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://grandcentraldeployment.s3.amazonaws.com/CFTemplates_GCDeployer_User.json&stackName=GrandCentralIAMUser
+<<<<<<< HEAD
+=======
+
+```
+IAM Role Creation Shortcut (beta)
+
+1. Open Cloudformation Template in target account and run https://grandcentraldeployment.s3.amazonaws.com/CFTemplates_GCDeployer_User.json 
+
+2. Copy the Access Key / Secret Key from CloudFormation Output
+>>>>>>> 92790ef038178f202c5c448f260687aa26b2d64b
 
 Here is the CloudFormation Template :  https://grandcentraldeployment.s3.amazonaws.com/CFTemplates_GCDeployer_User.json 
     
@@ -47,6 +61,8 @@ IAM Policy - Grand_Central_Lister_Policy
 ```
 Next, each AWS Account will need to have the following IAM User and Policy created in order to deploy the data collection capabilities for Splunk : 
 
+### This will require that you make sure the preface to your Deployment Job has 'grandcentral' in the name.
+
 ```
 IAM Policy : https://github.com/amiracle/grand_central/blob/master/Grand_Central_Deployer.json
 
@@ -57,6 +73,7 @@ IAM Policy : https://github.com/amiracle/grand_central/blob/master/Grand_Central
             "Sid": "ListDescribe",
             "Effect": "Allow",
             "Action": [
+<<<<<<< HEAD
                 "autoscaling:Describe*",
                 "cloudformation:CreateStackSet",
                 "cloudformation:CreateUploadBucket",
@@ -77,24 +94,76 @@ IAM Policy : https://github.com/amiracle/grand_central/blob/master/Grand_Central
                 "cloudwatch:ListMetrics",
                 "cloudwatch:PutMetricData",
                 "config:DeliverConfigSnapshot",
+=======
+                "lambda:CreateFunction",
+>>>>>>> 92790ef038178f202c5c448f260687aa26b2d64b
                 "config:GetComplianceSummaryByConfigRule",
-                "ec2:DescribeAddresses",
-                "ec2:DescribeImages",
+                "iam:GetAccountPasswordPolicy",
+                "cloudformation:ListExports",
+                "logs:DeleteSubscriptionFilter",
+                "cloudwatch:PutMetricData",
                 "ec2:DescribeInstances",
-                "ec2:DescribeKeyPairs",
-                "ec2:DescribeNetworkAcls",
-                "ec2:DescribeRegions",
-                "ec2:DescribeReservedInstances",
-                "ec2:DescribeSecurityGroups",
+                "kms:Decrypt",
+                "kinesis:Get*",
+                "lambda:GetFunctionConfiguration",
                 "ec2:DescribeSnapshots",
-                "ec2:DescribeSubnets",
+                "sns:ListEndpointsByPlatformApplication",
+                "kinesis:ListStreams",
+                "cloudwatch:DescribeAlarmsForMetric",
+                "cloudwatch:ListDashboards",
                 "ec2:DescribeVolumes",
+<<<<<<< HEAD
                 "ec2:DescribeVpcs",
                 "events:DeleteRule",
                 "events:DescribeRule",
+=======
+                "logs:GetLogEvents",
+                "events:RemoveTargets",
+                "lambda:DeleteFunction",
+                "ec2:DescribeReservedInstances",
+                "ec2:DescribeKeyPairs",
+                "cloudformation:CreateStackSet",
+                "ec2:DescribeNetworkAcls",
+>>>>>>> 92790ef038178f202c5c448f260687aa26b2d64b
                 "events:PutEvents",
+                "cloudwatch:DescribeInsightRules",
+                "events:DescribeRule",
+                "sns:GetPlatformApplicationAttributes",
+                "sns:GetSubscriptionAttributes",
+                "cloudwatch:GetMetricStatistics",
+                "sns:ListPhoneNumbersOptedOut",
+                "sns:GetEndpointAttributes",
+                "sts:AssumeRole",
+                "logs:PutSubscriptionFilter",
+                "ec2:DescribeSubnets",
+                "sns:GetSMSAttributes",
+                "cloudformation:ValidateTemplate",
+                "cloudformation:CreateUploadBucket",
+                "cloudformation:DescribeStackDriftDetectionStatus",
+                "autoscaling:Describe*",
+                "ec2:DescribeAddresses",
+                "cloudwatch:GetMetricData",
+                "logs:DescribeLogStreams",
                 "events:PutRule",
+                "ec2:DescribeRegions",
+                "sns:ListTopics",
+                "cloudwatch:ListMetrics",
+                "cloudwatch:DescribeAnomalyDetectors",
+                "cloudformation:EstimateTemplateCost",
+                "cloudformation:DescribeAccountLimits",
+                "cloudwatch:GetMetricWidgetImage",
+                "config:DeliverConfigSnapshot",
+                "sqs:ListQueues",
+                "cloudformation:ListStacks",
+                "logs:DescribeLogGroups",
+                "cloudformation:ListImports",
+                "kinesis:DescribeStream",
+                "sns:ListSubscriptions",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeImages",
+                "events:DeleteRule",
                 "events:PutTargets",
+<<<<<<< HEAD
                 "events:RemoveTargets",
                 "iam:GetAccountPasswordPolicy",
                 "iam:ListUsers",
@@ -123,10 +192,18 @@ IAM Policy : https://github.com/amiracle/grand_central/blob/master/Grand_Central
                 "sns:ListTopics",
                 "sqs:ListQueues",
                 "sts:AssumeRole"
+=======
+                "s3:ListAllMyBuckets",
+                "ec2:DescribeVpcs",
+                "iam:ListUsers",
+                "lambda:RemovePermission",
+                "sns:ListPlatformApplications"
+>>>>>>> 92790ef038178f202c5c448f260687aa26b2d64b
             ],
             "Resource": "*"
         },
         {
+<<<<<<< HEAD
             "Sid": "IAMConfigS3SNSSQSCreation",
             "Effect": "Allow",
             "Action": [
@@ -149,22 +226,44 @@ IAM Policy : https://github.com/amiracle/grand_central/blob/master/Grand_Central
                 "iam:ListAccessKeys",
                 "iam:PassRole",
                 "iam:PutRolePolicy",
-                "s3:GetAccelerateConfiguration",
-                "s3:GetBucketCORS",
-                "s3:GetBucketLocation",
+=======
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:DeleteMessage",
+                "s3:GetLifecycleConfiguration",
+                "s3:GetBucketTagging",
                 "s3:GetBucketLogging",
+                "sqs:ReceiveMessage",
+                "s3:CreateBucket",
+                "iam:CreateRole",
+                "s3:ListBucket",
+>>>>>>> 92790ef038178f202c5c448f260687aa26b2d64b
+                "s3:GetAccelerateConfiguration",
+                "iam:AttachRolePolicy",
+                "iam:PutRolePolicy",
+                "iam:CreateUser",
                 "s3:GetBucketPolicy",
+                "s3:GetObjectAcl",
+<<<<<<< HEAD
+                "s3:ListBucket",
+=======
+                "firehose:DeleteDeliveryStream",
+                "iam:PassRole",
+                "config:GetComplianceDetailsByConfigRule",
+                "iam:DetachRolePolicy",
+>>>>>>> 92790ef038178f202c5c448f260687aa26b2d64b
+                "sns:Publish",
+                "iam:DeleteRolePolicy",
+                "config:DescribeConfigRules",
+                "s3:DeleteBucket",
+                "s3:PutBucketVersioning",
+                "iam:ListAccessKeys",
                 "s3:GetBucketPolicyStatus",
                 "s3:GetBucketPublicAccessBlock",
-                "s3:GetBucketTagging",
-                "s3:GetLifecycleConfiguration",
-                "s3:GetObject",
-                "s3:GetObjectAcl",
-                "s3:ListBucket",
-                "sns:Publish",
-                "sqs:DeleteMessage",
-                "sqs:GetQueueAttributes",
+                "iam:GetRole",
                 "sqs:GetQueueUrl",
+<<<<<<< HEAD
                 "sqs:ReceiveMessage",
                 "sqs:SendMessage"
             ],
@@ -206,6 +305,34 @@ IAM Policy : https://github.com/amiracle/grand_central/blob/master/Grand_Central
         },
         {
             "Sid": "SNS",
+=======
+                "config:DescribeConfigRuleEvaluationStatus",
+                "firehose:CreateDeliveryStream",
+                "iam:GetAccessKeyLastUsed",
+                "sqs:SendMessage",
+                "iam:DeleteRole",
+                "sqs:GetQueueAttributes",
+                "iam:DeleteUser",
+                "firehose:DescribeDeliveryStream",
+                "s3:GetObject",
+                "s3:GetBucketCORS",
+                "iam:GetUser",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": [
+                "arn:aws:s3:::grandcentral*",
+                "arn:aws:s3:::*/*",
+                "arn:aws:config:*:*:config-rule/grandcentral*",
+                "arn:aws:firehose:*:*:deliverystream/grandcentral*",
+                "arn:aws:sqs:*:*:grandcentral*",
+                "arn:aws:iam::*:role/grandcentral*",
+                "arn:aws:iam::*:user/grandcentral*",
+                "arn:aws:sns:*:*:grandcentral*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor2",
+>>>>>>> 92790ef038178f202c5c448f260687aa26b2d64b
             "Effect": "Allow",
             "Action": [
                 "sns:Get*",
@@ -214,12 +341,21 @@ IAM Policy : https://github.com/amiracle/grand_central/blob/master/Grand_Central
             "Resource": "arn:aws:sns:*:*:grandcentral*"
         },
         {
+<<<<<<< HEAD
             "Sid": "Cloudwatch",
             "Effect": "Allow",
             "Action": [
                 "cloudwatch:Describe*",
                 "cloudwatch:Get*",
                 "cloudwatch:List*"
+=======
+            "Sid": "VisualEditor3",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:List*",
+                "cloudwatch:Get*",
+                "cloudwatch:Describe*"
+>>>>>>> 92790ef038178f202c5c448f260687aa26b2d64b
             ],
             "Resource": [
                 "arn:aws:cloudwatch::*:dashboard/*",
@@ -228,7 +364,11 @@ IAM Policy : https://github.com/amiracle/grand_central/blob/master/Grand_Central
             ]
         },
         {
+<<<<<<< HEAD
             "Sid": "CloudFormation",
+=======
+            "Sid": "VisualEditor4",
+>>>>>>> 92790ef038178f202c5c448f260687aa26b2d64b
             "Effect": "Allow",
             "Action": "cloudformation:*",
             "Resource": [
@@ -328,3 +468,7 @@ Splunk will communicate with AWS and begin deploying the CloudFormation template
 
 In the Observation Deck dashboard you will see the succesfully deployed Accounts and Regions:
 ![master_account](https://grandcentraldeployment.s3.amazonaws.com/screenshots/14_gc.png)
+
+# Binary File Declaration
+
+File: bin/python_terraform/terraform
