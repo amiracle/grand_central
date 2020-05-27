@@ -119,6 +119,7 @@
             "Resource": [
                 "arn:aws:config:*:*:config-rule/grandcentral*",
                 "arn:aws:firehose:*:*:deliverystream/grandcentral*",
+                "arn:aws:firehose:*:*:deliverystream/CWEFirehoseDeliveryStream*",
                 "arn:aws:iam::*:role/grandcentral*",
                 "arn:aws:iam::*:user/grandcentral*",
                 "arn:aws:s3:::grandcentral*",
