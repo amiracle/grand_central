@@ -1,0 +1,280 @@
+{
+    "AWSTemplateFormatVersion" : "2010-09-09",
+  
+    "Description" : "Cloudformation template to create Grand Central (GC) IAM User, Policy, Group and Admin Group. Once the template runs, it will output the Access and Secret Keys.",
+  
+    "Parameters" : {
+      "Password": {
+        "NoEcho": "true",
+        "Type": "String",
+        "Description" : "Please enter a new account password. It must contain at least 8 characters. ",
+        "MinLength": "1",
+        "MaxLength": "41",
+        "ConstraintDescription" : "The password must be between 8 and 41 characters."
+      }
+    },
+  
+    "Resources" : {
+      "GCDeployer" : {
+        "Type" : "AWS::IAM::User",
+        "Properties" : {
+          "LoginProfile": {
+            "Password": { "Ref" : "Password" }
+          }
+        }
+      },
+  
+      "GCDeployerGroup" : {
+        "Type" : "AWS::IAM::Group"
+      },
+  
+      "GCDeployerAdminGroup" : {
+        "Type" : "AWS::IAM::Group"
+      },
+  
+      "Users" : {
+        "Type" : "AWS::IAM::UserToGroupAddition",
+        "Properties" : {
+          "GroupName": { "Ref" : "GCDeployerGroup" },
+          "Users" : [ { "Ref" : "GCDeployer" } ]
+        }
+      },
+  
+      "Admins" : {
+        "Type" : "AWS::IAM::UserToGroupAddition",
+        "Properties" : {
+          "GroupName": { "Ref" : "GCDeployerAdminGroup" },
+          "Users" : [ { "Ref" : "GCDeployer" } ]
+        }
+      },
+  
+      "CFNUserPolicies" : {
+        "Type" : "AWS::IAM::Policy",
+        "Properties" : {
+          "PolicyName" : "CFNUsers",
+          "PolicyDocument" : {
+            "Statement": [
+        {
+            "Sid": "ListDescribe",
+            "Effect": "Allow",
+            "Action": [
+                "autoscaling:Describe*",
+                "cloudformation:CreateStackSet",
+                "cloudformation:CreateUploadBucket",
+                "cloudformation:DescribeAccountLimits",
+                "cloudformation:DescribeStackDriftDetectionStatus",
+                "cloudformation:EstimateTemplateCost",
+                "cloudformation:ListExports",
+                "cloudformation:ListImports",
+                "cloudformation:ListStacks",
+                "cloudformation:ValidateTemplate",
+                "cloudwatch:DescribeAlarmsForMetric",
+                "cloudwatch:DescribeAnomalyDetectors",
+                "cloudwatch:DescribeInsightRules",
+                "cloudwatch:GetMetricData",
+                "cloudwatch:GetMetricStatistics",
+                "cloudwatch:GetMetricWidgetImage",
+                "cloudwatch:ListDashboards",
+                "cloudwatch:ListMetrics",
+                "cloudwatch:PutMetricData",
+                "config:DeliverConfigSnapshot",
+                "config:GetComplianceSummaryByConfigRule",
+                "ec2:DescribeAddresses",
+                "ec2:DescribeImages",
+                "ec2:DescribeInstances",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeNetworkAcls",
+                "ec2:DescribeRegions",
+                "ec2:DescribeReservedInstances",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSnapshots",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVolumes",
+                "ec2:DescribeVpcs",
+                "events:DeleteRule",
+                "events:DescribeRule",
+                "events:PutEvents",
+                "events:PutRule",
+                "events:PutTargets",
+                "events:RemoveTargets",
+                "iam:GetAccountPasswordPolicy",
+                "iam:ListUsers",
+                "kinesis:DescribeStream",
+                "kinesis:Get*",
+                "kinesis:ListStreams",
+                "kms:Decrypt",
+                "lambda:CreateFunction",
+                "lambda:DeleteFunction",
+                "lambda:GetFunctionConfiguration",
+                "lambda:RemovePermission",
+                "logs:DeleteSubscriptionFilter",
+                "logs:DescribeLogGroups",
+                "logs:DescribeLogStreams",
+                "logs:GetLogEvents",
+                "logs:PutSubscriptionFilter",
+                "s3:ListAllMyBuckets",
+                "sns:GetEndpointAttributes",
+                "sns:GetPlatformApplicationAttributes",
+                "sns:GetSMSAttributes",
+                "sns:GetSubscriptionAttributes",
+                "sns:ListEndpointsByPlatformApplication",
+                "sns:ListPhoneNumbersOptedOut",
+                "sns:ListPlatformApplications",
+                "sns:ListSubscriptions",
+                "sns:ListTopics",
+                "sqs:ListQueues",
+                "sts:AssumeRole"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IAMConfigS3SNSSQSCreation",
+            "Effect": "Allow",
+            "Action": [
+                "config:DescribeConfigRuleEvaluationStatus",
+                "config:DescribeConfigRules",
+                "config:GetComplianceDetailsByConfigRule",
+                "firehose:CreateDeliveryStream",
+                "firehose:DeleteDeliveryStream",
+                "firehose:DescribeDeliveryStream",
+                "iam:AttachRolePolicy",
+                "iam:CreateRole",
+                "iam:CreateUser",
+                "iam:DeleteRole",
+                "iam:DeleteRolePolicy",
+                "iam:DeleteUser",
+                "iam:DetachRolePolicy",
+                "iam:GetAccessKeyLastUsed",
+                "iam:GetRole",
+                "iam:GetUser",
+                "iam:ListAccessKeys",
+                "iam:PassRole",
+                "iam:PutRolePolicy",
+                "s3:GetAccelerateConfiguration",
+                "s3:GetBucketCORS",
+                "s3:GetBucketLocation",
+                "s3:GetBucketLogging",
+                "s3:GetBucketPolicy",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketTagging",
+                "s3:GetLifecycleConfiguration",
+                "s3:GetObject",
+                "s3:GetObjectAcl",
+                "s3:ListBucket",
+                "sns:Publish",
+                "sqs:DeleteMessage",
+                "sqs:GetQueueAttributes",
+                "sqs:GetQueueUrl",
+                "sqs:ReceiveMessage",
+                "sqs:SendMessage"
+            ],
+            "Resource": [
+                "arn:aws:config:*:*:config-rule/grandcentral*",
+                "arn:aws:firehose:*:*:deliverystream/grandcentral*",
+                "arn:aws:firehose:*:*:deliverystream/CWEFirehoseDeliveryStream*",
+                "arn:aws:iam::*:role/grandcentral*",
+                "arn:aws:iam::*:user/grandcentral*",
+                "arn:aws:s3:::grandcentral*",
+                "arn:aws:s3:::trumpet-splunk-prod*",
+                "arn:aws:sns:*:*:grandcentral*",
+                "arn:aws:sqs:*:*:grandcentral*"    
+            ]
+        },
+        {
+            "Sid": "S3Modifications",
+            "Effect": "Allow",
+            "Action": [
+                "s3:CreateBucket",
+                "s3:DeleteBucket",
+                "s3:GetBucketPolicy",
+                "s3:GetBucketCORS",
+                "s3:GetBucketLocation",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketLogging",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketTagging",
+                "s3:GetAccelerateConfiguration",
+                "s3:GetLifecycleConfiguration",
+                "s3:GetObjectAcl",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:PutBucketVersioning"              
+            ],
+            "Resource": [
+                "arn:aws:s3:::grandcentral*",
+                "arn:aws:s3:::CWEBackupS3Bucket*"
+            ]
+        },
+        {
+            "Sid": "SNS",
+            "Effect": "Allow",
+            "Action": [
+                "sns:Get*",
+                "sns:List*"
+            ],
+            "Resource": "arn:aws:sns:*:*:grandcentral*"
+        },
+        {
+            "Sid": "Cloudwatch",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:Describe*",
+                "cloudwatch:Get*",
+                "cloudwatch:List*"
+            ],
+            "Resource": [
+                "arn:aws:cloudwatch::*:dashboard/*",
+                "arn:aws:cloudwatch:*:*:insight-rule/*",
+                "arn:aws:cloudwatch:*:*:alarm:*"
+            ]
+        },
+        {
+            "Sid": "CloudFormation",
+            "Effect": "Allow",
+            "Action": "cloudformation:*",
+            "Resource": [
+                "arn:aws:cloudformation:*:*:stack/grandcentral*/*",
+                "arn:aws:cloudformation:*:*:stackset/*:grandcentral*"
+            ]
+        }
+    ]
+          },
+          "Groups" : [{ "Ref" : "GCDeployerGroup" }]
+        }
+      },
+  
+      "CFNAdminPolicies" : {
+        "Type" : "AWS::IAM::Policy",
+        "Properties" : {
+          "PolicyName" : "CFNAdmins",
+          "PolicyDocument" : {
+            "Statement": [{
+              "Effect"   : "Allow",
+              "Action"   : "cloudformation:*",
+              "Resource" : "*"
+            }]
+          },
+          "Groups" : [{ "Ref" : "GCDeployerAdminGroup" }]
+        }
+      },
+  
+      "GCKeys" : {
+        "Type" : "AWS::IAM::AccessKey",
+        "Properties" : {
+          "UserName" : { "Ref": "GCDeployer" }
+        }
+      }
+    },
+  
+    "Outputs" : {
+      "AccessKey" : {
+        "Value" : { "Ref" : "GCKeys" },
+        "Description" : "AWSAccessKeyId of new user"
+      },
+      "SecretKey" : {
+        "Value" : { "Fn::GetAtt" : ["GCKeys", "SecretAccessKey"]},
+        "Description" : "AWSSecretKey of new user"
+      }
+    }
+  }

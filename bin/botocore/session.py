@@ -189,22 +189,24 @@ class Session(object):
         self._internal_components.lazy_register_component(
             'monitor', self._create_csm_monitor)
 
-    #def _create_csm_monitor(self):
-    #    if self.get_config_variable('csm_enabled'):
-    #        client_id = self.get_config_variable('csm_client_id')
-    #        port = self.get_config_variable('csm_port')
-    #        handler = monitoring.Monitor(
-    #            adapter=monitoring.MonitorEventAdapter(),
-    #            publisher=monitoring.SocketPublisher(
-    #                socket=socket.socket(socket.AF_INET, socket.SOCK_DGRAM),
-    #                host='127.0.0.1',
-    #                port=port,
-    #                serializer=monitoring.CSMSerializer(
-    #                    csm_client_id=client_id)
-    #            )
-    #        )
-    #        return handler
-    #    return None
+    def _create_csm_monitor(self):
+        '''
+        if self.get_config_variable('csm_enabled'):
+            client_id = self.get_config_variable('csm_client_id')
+            port = self.get_config_variable('csm_port')
+            handler = monitoring.Monitor(
+                adapter=monitoring.MonitorEventAdapter(),
+                publisher=monitoring.SocketPublisher(
+                    socket=socket.socket(socket.AF_INET, socket.SOCK_DGRAM),
+                    host='127.0.0.1',
+                    port=port,
+                    serializer=monitoring.CSMSerializer(
+                        csm_client_id=client_id)
+                )
+            )
+            return handler
+        '''
+        return None
 
     @property
     def available_profiles(self):
