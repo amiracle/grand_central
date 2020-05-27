@@ -67,10 +67,8 @@ Use the credentials_smusher.py file found in the root directory ($SPLUNK_HOME/et
 
 ```md
 ## Bulk Credentials Upload - two step process :
-# Step 1 - get the credential files
-Download all the credential files created for each account into one directory on your local machine.
-# Step 2 - Run credentials_musher.py
-Run the credentials_musher.py python script against the directory containing your credentials.csv or AccessKey.csv files.
+# Step 1 - Download all the credential files created for each account into one directory on your local machine.
+# Step 2 - Run the credentials_smusher.py python script against the directory containing your credentials.csv or AccessKey.csv files.
 all_account_accessKeys.json file created.
 ```
 Take the all_account_accessKey.json file (or all_account_credentials.json) and hit the Bulk Credentials Upload button and upload the file:
