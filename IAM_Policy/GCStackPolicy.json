@@ -5,18 +5,12 @@
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "organizations:ListAccountsForParent",
-                "organizations:EnableAWSServiceAccess",
-                "organizations:ListRoots",
-                "organizations:ListCreateAccountStatus",
-                "organizations:ListAccounts",
-                "organizations:ListTagsForResource",
-                "organizations:DescribeOrganization",
-                "organizations:DescribeOrganizationalUnit",
-                "organizations:ListParents",
-                "organizations:ListOrganizationalUnitsForParent",
-                "organizations:ListAWSServiceAccessForOrganization",
-                "organizations:ListChildren"
+                      "organizations:List*",
+                      "organizations:EnableAWSServiceAccess",
+                      "organizations:DescribeOrganization",
+                      "organizations:DescribeOrganizationalUnit",
+                      "cloudformation:CreateStackSet",
+                      "cloudformation:CreateStackInstances"
             ],
             "Resource": "*"
         }
