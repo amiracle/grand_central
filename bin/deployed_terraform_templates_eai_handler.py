@@ -7,6 +7,10 @@ import urllib
 import base_eai_handler
 import log_helper
 import json
+
+libpath = os.path.dirname(os.path.abspath(__file__))
+sys.path[:0] = [os.path.join(libpath, '3rdparty')]
+import boto3
 from python_terraform import *
 
 if sys.platform == 'win32':

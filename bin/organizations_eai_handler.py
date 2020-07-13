@@ -3,10 +3,12 @@ import os
 import sys
 import splunk.admin as admin
 import organizations_schema
-import boto3
 import urllib3
 import base_eai_handler
 import log_helper
+libpath = os.path.dirname(os.path.abspath(__file__))
+sys.path[:0] = [os.path.join(libpath, '3rdparty')]
+import boto3
 
 if sys.platform == 'win32':
     import msvcrt

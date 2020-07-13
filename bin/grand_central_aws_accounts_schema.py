@@ -37,7 +37,7 @@ server_schema = Schema({
     Optional('parent_aws_account_id', default=''): And(str, len, error='Invalid parent AWS Account ID'),
 })
 
-SERVER_FIELDS = ['name', 'aws_access_key', 'organization_master_account', 'aws_account_id', 'aws_account_arn', 'aws_account_email', 'aws_account_status', 'aws_account_joined_method', 'aws_account_joined_timestamp', 'display_name', 'tags', 'template_link_alternate', 'cloudformation_template_action', 'splunk_account_link_alternate', 'parent_aws_account_id']
+SERVER_FIELDS = ['name', 'aws_access_key', 'organization_master_account', 'aws_account_id', 'aws_account_arn', 'aws_account_email', 'aws_account_status', 'aws_account_joined_method', 'aws_account_joined_timestamp', 'display_name', 'tags', 'template_link_alternate', 'cloudformation_template_action', 'splunk_account_link_alternate', 'parent_aws_account_id', 'enable_ou']
 
 auth_schema = Schema({
     'aws_secret_key': And(str, len, error='Invalid AWS Secret Key'),

@@ -1,8 +1,15 @@
 <nav search_view="search" color="#65A637">
-    <view name="grand_central_accounts" />
-    <view name="trumpet" />
-    <view name="templates" />
+  <view name="welcome" default='true' />
+    <view name="observation_deck" />
+        <collection label="Configure Data Sources">
+    		<collection label="Amazon Web Services">
+          	    <view name="grand_central_accounts" />
+                </collection>
+	</collection>
+    	<collection label="Configure Templates">
+		<view name="templates" />
+    		<view name="trumpet" />
+	</collection>
     <view name="pushvpull" />
-    <view name="observation_deck" default='true' />
-    <view name="search" />
+    <view name="search" />	
 </nav>

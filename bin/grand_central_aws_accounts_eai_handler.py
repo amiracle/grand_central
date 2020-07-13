@@ -8,10 +8,13 @@ import urllib
 import hashlib
 import base_eai_handler
 import log_helper
-import boto3
 import json
 import time
 from datetime import datetime
+
+libpath = os.path.dirname(os.path.abspath(__file__))
+sys.path[:0] = [os.path.join(libpath, '3rdparty')]
+import boto3
 
 if sys.platform == 'win32':
     import msvcrt
@@ -43,12 +46,45 @@ class GrandCentralAWSAccountsEAIHandler(base_eai_handler.BaseEAIHandler):
         conf_handler_path = self.get_conf_handler_path_name('grand_central_aws_accounts', 'nobody')
         grand_central_aws_accounts_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET', get_args={'count': -1})
 
+        enable_ou = self.get_param('enable_ou', default='0')
+
         # Add link alternate (without mgmt, scheme, host, port) to list response
         for grand_central_aws_account in grand_central_aws_accounts_eai_response_payload['entry']:
             grand_central_aws_account_link_alternate = grand_central_aws_account['links']['alternate'].replace('/configs/conf-grand_central_aws_accounts/', '/grand_central_aws_accounts/')
 
             grand_central_aws_account['content']['grand_central_aws_accounts_link_alternate'] = grand_central_aws_account_link_alternate
             grand_central_aws_account['content']['aws_account_age'] = self.convert_date_to_age(grand_central_aws_account['content'].get('aws_account_joined_timestamp', '0'))
+
+            if enable_ou != '0':
+                org_id = grand_central_aws_account['content']['parent_aws_account_id']
+                grand_central_aws_accounts_rest_path = '%s/%s' % (conf_handler_path, urllib.quote_plus(org_id))
+                grand_central_aws_account_eai_response_payload = self.simple_request_eai(
+                    grand_central_aws_accounts_rest_path, 'read', 'GET')
+
+                # Get org master account credentials
+                aws_secret_key_link_alternate = grand_central_aws_account_eai_response_payload['entry'][0]['content'][
+                    'aws_secret_key_link_alternate']
+                aws_access_key = grand_central_aws_account_eai_response_payload['entry'][0]['content'][
+                    'aws_access_key']
+                aws_account_id =  grand_central_aws_account_eai_response_payload['entry'][0]['content']['aws_account_id']
+
+                passwords_conf_payload = self.simple_request_eai(aws_secret_key_link_alternate, 'list', 'GET')
+                SECRET_KEY = passwords_conf_payload['entry'][0]['content']['clear_password']
+
+                # Make call to AWS API endpoint
+                client = boto3.client('organizations', aws_access_key_id=aws_access_key, aws_secret_access_key=SECRET_KEY)
+
+                response = client.list_parents(ChildId=aws_account_id)
+
+                for parent in response['Parents']:
+                    if parent['Type'] == 'ORGANIZATIONAL_UNIT':
+                        ou_id = parent['Id']
+                        grand_central_aws_account['content']['ou_id'] = ou_id
+
+                        response = client.describe_organizational_unit(OrganizationalUnitId=ou_id)
+
+                        grand_central_aws_account['content']['ou_name'] = response['OrganizationalUnit']['Name']
+                        grand_central_aws_account['content']['ou_arn'] = response['OrganizationalUnit']['Arn']
 
         self.set_conf_info_from_eai_payload(confInfo, grand_central_aws_accounts_eai_response_payload)
 

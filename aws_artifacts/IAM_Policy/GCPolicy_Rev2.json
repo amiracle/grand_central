@@ -1,0 +1,47 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CFTemplateSSInstance",
+            "Effect": "Allow",
+            "Action": "cloudformation:CreateStackInstances",
+            "Resource": "arn:aws:cloudformation:*:*:stackset/grandcentral:*"
+        },
+        {
+            "Sid": "CFTemplateCreateStackSet",
+            "Effect": "Allow",
+            "Action": "cloudformation:CreateStackSet",
+            "Resource": "*"
+        },
+        {
+            "Sid": "OrganizationList",
+            "Effect" : "Allow",
+            "Action": 
+            ["organizations:List*",
+             "organizations:DescribeOrganization",
+             "organizations:DescribeOrganizationalUnit",
+              "organizations:EnableAWSServiceAccess"
+             ],
+            "Resource": "*",
+            "Condition": {
+                "ForAllValues:StringLike": {
+                        "organizations:ServicePrincipal": 
+                        ["cloudformation.*.amazonaws.com",
+                         "cloudformation-fips.*.amazonaws.com",
+                         "cloudtrail.*.amazonaws.com",
+                         "cloudtrail-fips.*.amazonaws.com",
+                         "config.*.amazonaws.com",
+                         "config-fips.*.amazonaws.com",
+                         "events.*.amazonaws.com",
+                         "events-fips.*.amazonaws.com",
+                         "logs.*.amazonaws.com",
+                         "logs-fips.*.amazonaws.com",
+                         "s3.amazonaws.com",
+                         "s3.*.amazonaws.com",
+                         "organizations.*.amazonaws.com"
+                         ]
+                }
+            }
+        }
+    ]
+}

@@ -7,6 +7,11 @@ import urllib
 import base_eai_handler
 import log_helper
 import json
+import copy
+import uuid
+
+libpath = os.path.dirname(os.path.abspath(__file__))
+sys.path[:0] = [os.path.join(libpath, '3rdparty')]
 import boto3
 
 if sys.platform == 'win32':
@@ -46,6 +51,7 @@ class DeployedCloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler)
 
                 cloudformation_stack_name = deployed_cloudformation_template['content']['cloudformation_stack_name']
                 aws_region = deployed_cloudformation_template['content']['aws_region']
+
                 grand_central_aws_account_link_alternate = deployed_cloudformation_template['content']['grand_central_aws_account_link_alternate']
 
                 grand_central_aws_account_eai_response_payload = self.simple_request_eai(grand_central_aws_account_link_alternate, 'read', 'GET')
@@ -93,6 +99,64 @@ class DeployedCloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler)
 
             else:
                 deployed_cloudformation_template['content']['data_collection_deployed'] = '0'
+
+        # Fetch from deployed cloudformation templates conf handler
+        conf_handler_path = self.get_conf_handler_path_name('deployed_stacksets', 'nobody')
+        deployed_stacksets_eai_response_payload = self.simple_request_eai(conf_handler_path, 'list', 'GET', get_args={'count': -1})
+
+        for deployed_stackset in deployed_stacksets_eai_response_payload['entry']:
+            stackset_name = deployed_stackset['content']['stackset_name']
+            grand_central_aws_account_link_alternate = deployed_stackset['content'][
+                'organization_master_account_link_alternate']
+
+            grand_central_aws_account_eai_response_payload = self.simple_request_eai(
+                grand_central_aws_account_link_alternate, 'read', 'GET')
+            aws_access_key = grand_central_aws_account_eai_response_payload['entry'][0]['content']['aws_access_key']
+
+            aws_secret_key_link_alternate = grand_central_aws_account_eai_response_payload['entry'][0]['content'][
+                'aws_secret_key_link_alternate']
+
+            passwords_conf_payload = self.simple_request_eai(aws_secret_key_link_alternate, 'list', 'GET')
+            SECRET_KEY = passwords_conf_payload['entry'][0]['content']['clear_password']
+
+            try:
+                client = boto3.client('cloudformation', aws_access_key_id=aws_access_key,
+                                      aws_secret_access_key=SECRET_KEY)
+                response = client.list_stack_instances(
+                    StackSetName=stackset_name,
+                )
+            except Exception, e:
+                logger.info(str(e))
+                continue
+
+            for stack_instance in response['Summaries']:
+                stack_instance_metadata = copy.deepcopy(deployed_stackset)
+
+                stack_instance_metadata['content']['aws_region'] = stack_instance['Region']
+                stack_instance_metadata['name'] = str(uuid.uuid4().hex)
+
+                if 'StackId' in stack_instance:
+                    stack_instance_metadata['content']['cloudformation_stack_id'] = stack_instance['StackId']
+                    stack_instance_metadata['content']['cloudformation_stack_name'] = stack_instance['StackId']
+                else:
+                    stack_instance_metadata['content']['cloudformation_stack_id'] = stack_instance['StatusReason']
+                    stack_instance_metadata['content']['cloudformation_stack_name'] =  stack_instance['StatusReason']
+
+                stack_instance_metadata['content']['cloudformation_template_link_alternate'] = deployed_stackset['content']['cloudformation_template_link_alternate']
+                stack_instance_metadata['content']['data_collection_deployed'] = '1'
+
+                if stack_instance['Status'] == 'CURRENT':
+                    stack_instance_metadata['content']['data_collection_deployment_success'] = '1'
+                elif stack_instance['Status'] == 'OUTDATED':
+                    stack_instance_metadata['content']['data_collection_deployment_success'] = '2'
+                else:
+                    stack_instance_metadata['content']['data_collection_deployment_success'] = '0'
+
+                stack_instance_metadata['content']['data_selections'] = deployed_stackset['content']['data_selections']
+                stack_instance_metadata['content']['grand_central_aws_account_link_alternate'] = '%s/%s' % ('/servicesNS/nobody/grand-central/grand_central_aws_accounts', stack_instance['Account'])
+                stack_instance_metadata['content']['splunk_account_link_alternate'] = deployed_stackset['content']['splunk_account_link_alternate']
+
+                deployed_cloudformation_templates_eai_response_payload['entry'].append(stack_instance_metadata)
 
         self.set_conf_info_from_eai_payload(confInfo, deployed_cloudformation_templates_eai_response_payload)
 
@@ -153,6 +217,7 @@ class DeployedCloudFormationTemplatesEAIHandler(base_eai_handler.BaseEAIHandler)
 
         json_data = json.dumps(json_data)
 
+        # Get AWS account details
         grand_central_aws_account_eai_response_payload = self.simple_request_eai(params['grand_central_aws_account_link_alternate'], 'list', 'GET')
         aws_secret_key_link_alternate = grand_central_aws_account_eai_response_payload['entry'][0]['content']['aws_secret_key_link_alternate']
         aws_access_key = grand_central_aws_account_eai_response_payload['entry'][0]['content']['aws_access_key']

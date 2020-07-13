@@ -1,0 +1,123 @@
+{
+    "AWSTemplateFormatVersion" : "2010-09-09",
+  
+    "Description" : "Cloudformation template to create Grand Central (GC) IAM User, Policy, Group and Admin Group. Once the template runs, it will output the Access and Secret Keys.",
+  
+    "Parameters" : {
+      "Password": {
+        "NoEcho": "true",
+        "Type": "String",
+        "Description" : "Please enter a new account password. It must contain at least 8 characters. ",
+        "MinLength": "8",
+        "MaxLength": "41",
+        "ConstraintDescription" : "The password must be between 8 and 41 characters."
+      }
+    },
+  
+    "Resources" : {
+      "GCStackSetUser" : {
+        "Type" : "AWS::IAM::User",
+        "Properties" : {
+          "LoginProfile": {
+            "Password": { "Ref" : "Password" }
+          }
+        }
+      },
+  
+      "GCStackSetGroup" : {
+        "Type" : "AWS::IAM::Group"
+      },
+  
+      "Admins" : {
+        "Type" : "AWS::IAM::UserToGroupAddition",
+        "Properties" : {
+          "GroupName": { "Ref" : "GCStackSetGroup" },
+          "Users" : [ { "Ref" : "GCStackSetUser" } ]
+        }
+      },
+  
+      "CFNUserPolicies" : {
+        "Type" : "AWS::IAM::Policy",
+        "Properties" : {
+          "PolicyName" : "GCStactSetPolicy",
+          "PolicyDocument" : {
+            "Statement": [
+                {
+                    "Sid": "GCSplunkStackSet",
+                    "Effect": "Allow",
+                    "Action": [
+                      "cloudformation:CreateStackSet",
+                      "cloudformation:CreateStackInstances"
+                    ],
+                    "Resource": "arn:aws:cloudformation:*:*:stackset/grandcentral:*"
+                },
+                {
+                    "Sid": "CFTemplateCreateStackSet",
+                    "Effect": "Allow",
+                    "Action": "cloudformation:CreateStackSet",
+                    "Resource": "*"
+                },
+                {
+                    "Sid": "OrganizationList",
+                    "Effect" : "Allow",
+                    "Action": 
+                    [
+                     "organizations:List*",
+                     "organizations:DescribeOrganization",
+                     "organizations:DescribeOrganizationalUnit"
+                    ],
+                    "Resource": "*"
+                },
+                {
+            "Sid": "EnableServiceAccess",
+            "Effect" : "Allow",
+            "Action": 
+            [
+              "organizations:EnableAWSServiceAccess"
+             ],
+            "Resource": "*",
+            "Condition": {
+                "ForAllValues:StringLike": {
+                        "organizations:ServicePrincipal": 
+                        ["cloudformation.*.amazonaws.com",
+                         "cloudformation-fips.*.amazonaws.com",
+                         "cloudtrail.*.amazonaws.com",
+                         "cloudtrail-fips.*.amazonaws.com",
+                         "config.*.amazonaws.com",
+                         "config-fips.*.amazonaws.com",
+                         "events.*.amazonaws.com",
+                         "events-fips.*.amazonaws.com",
+                         "logs.*.amazonaws.com",
+                         "logs-fips.*.amazonaws.com",
+                         "s3.amazonaws.com",
+                         "s3.*.amazonaws.com",
+                         "organizations.*.amazonaws.com"
+                         ]
+                }
+            }
+        }
+            ]
+          },
+          "Groups" : [{ "Ref" : "GCStackSetGroup" }]
+        }
+      },
+
+      "GCKeys" : {
+        "Type" : "AWS::IAM::AccessKey",
+        "Properties" : {
+          "UserName" : { "Ref": "GCStackSetUser" }
+        }
+      }
+    },
+  
+    "Outputs" : {
+      "AccessKey" : {
+        "Value" : { "Ref" : "GCKeys" },
+        "Description" : "AWSAccessKeyId of new user"
+      },
+      "SecretKey" : {
+        "Value" : { "Fn::GetAtt" : ["GCKeys", "SecretAccessKey"]},
+        "Description" : "AWSSecretKey of new user"
+      }
+    }
+  }

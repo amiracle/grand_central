@@ -8,10 +8,13 @@ import urllib
 import hashlib
 import base_eai_handler
 import log_helper
-import boto3
 import json
 import time
 from datetime import datetime
+
+libpath = os.path.dirname(os.path.abspath(__file__))
+sys.path[:0] = [os.path.join(libpath, '3rdparty')]
+import boto3
 
 if sys.platform == 'win32':
     import msvcrt

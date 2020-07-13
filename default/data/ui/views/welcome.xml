@@ -1,0 +1,63 @@
+<dashboard>
+  <label>Welcome to Grand Central</label>
+  <description>The Grand Central Splunk App is designed to help you setup and configure data collection from your various data sources.</description>
+  <row>
+    <panel>
+      <title>How to use Grand Central</title>
+      <html>
+        <p>Click on the 
+          <a href="observation_deck">Observation Deck</a> to see the state of your deployments. 
+        </p>
+        <p>Use the 
+          <a href="grand_central_accounts">Grand Central Accounts</a>, under the "Configure Data Sources" to setup your Cloud accounts for management.
+        </p>
+        <p>The 
+          <a href="pushvpull">Push vs. Pull </a> dashboard can show you the estimated differences in cost of pushing vs. pulling your data into Splunk. 
+        </p>
+        <p>The last two dashboards, 
+          <a href="templates">Template Manager</a>,
+          <a href="trumpet">Trumpet AWS Configuration Builder</a> can be used to create and manage custom Cloud Formation templates that you can use with Grand Central.
+        </p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Grand Central Project Links</title>
+      <html>
+    <p>
+          <a href="https://github.com/amiracle/grand_central">Grand Central Github Code</a>
+        </p>
+    <p>
+          <a href="https://github.com/amiracle/cooking_with_Splunk_and_AWS/blob/master/15%20-%20Grand%20Central.pptx">Grand Central Overview PowerPoint</a>
+        </p>
+    <p>
+          <a href="https://github.com/amiracle/cooking_with_Splunk_and_AWS/blob/master/16%20-%20Splunk%20Cloud%20Bootcamp%20Grand%20Central.pptx">Grand Central Lab (Getting Started)</a>
+        </p>
+    </html>
+    </panel>
+    <panel>
+      <title>AWS Documentation</title>
+      <html>
+      <p>
+          <a href="https://aws.amazon.com">Amazon Web Services</a>
+        </p>
+      <p>
+          <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-enable-trusted-access.html">Stacksets Trusrted Access</a>
+        </p>
+      <p>
+          <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html">AWS StackSets Concepts</a>
+        </p>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Architecture of Splunk and AWS Integration</title>
+      <html>
+              <center>
+          <img src="/static/app/grand_central/gc_overview.png" width="70%" height="70%"/>      </center>
+      </html>
+    </panel>
+  </row>
+</dashboard>
