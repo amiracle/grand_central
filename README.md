@@ -39,14 +39,20 @@ Here is the policy which it will deploy for reference:
         {
             "Sid": "CFTemplateSSInstance",
             "Effect": "Allow",
-            "Action": "cloudformation:CreateStackInstances",
-            "Resource": "arn:aws:cloudformation:*:*:stackset/grandcentral:*"
+            "Action": [
+                "cloudformation:CreateStackInstances",
+                "cloudformation:DeleteStackInstances"
+            ],
+            "Resource": "arn:aws:cloudformation:*:*:stackset/grandcentral*"
         },
         {
             "Sid": "CFTemplateCreateStackSet",
             "Effect": "Allow",
-            "Action": "cloudformation:CreateStackSet",
-            "Resource": "*"
+            "Action": [
+                "cloudformation:CreateStackSet",
+                "cloudformation:DeleteStackSet"
+            ],
+            "Resource": "arn:aws:cloudformation:*:*:stackset/grandcentral*"
         },
         {
             "Sid": "OrganizationList",
