@@ -47,15 +47,11 @@
                     "Effect": "Allow",
                     "Action": [
                       "cloudformation:CreateStackSet",
-                      "cloudformation:CreateStackInstances"
+                      "cloudformation:CreateStackInstances",
+                      "cloudformation:DeleteStackInstances",
+                      "cloudformation:DeleteStackSet"
                     ],
-                    "Resource": "arn:aws:cloudformation:*:*:stackset/grandcentral:*"
-                },
-                {
-                    "Sid": "CFTemplateCreateStackSet",
-                    "Effect": "Allow",
-                    "Action": "cloudformation:CreateStackSet",
-                    "Resource": "*"
+                    "Resource": "arn:aws:cloudformation:*:*:stackset/grandcentral*"
                 },
                 {
                     "Sid": "OrganizationList",
@@ -79,7 +75,8 @@
             "Condition": {
                 "ForAllValues:StringLike": {
                         "organizations:ServicePrincipal": 
-                        ["cloudformation.*.amazonaws.com",
+                        [
+                         "cloudformation.*.amazonaws.com",
                          "cloudformation-fips.*.amazonaws.com",
                          "cloudtrail.*.amazonaws.com",
                          "cloudtrail-fips.*.amazonaws.com",
