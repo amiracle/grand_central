@@ -12,3 +12,4 @@ local/deployed_cloudformation_templates.conf
 local/grand_central_aws_accounts.conf
 local/passwords.conf
 local/splunk_accounts.conf
+local/cloudformation_templates.conf
