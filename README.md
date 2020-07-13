@@ -23,7 +23,7 @@ IAM Role Creation Shortcut (Simplified)
 ![copy_ak_sk](https://grandcentraldeployment.s3.amazonaws.com/screenshots/gcuser01.png)
 
 4. Download [grand_central_202.spl](https://grandcentraldeployment.s3.amazonaws.com/grand_central_202.spl) file from S3 bucket and install on your Splunk instance. Splunk Cloud customers request to have the app installed. 
-![install_gc](https://grandcentraldeployment.s3.amazonaws.com/screenshots/gcuser01.png)
+![install_gc](https://grandcentraldeployment.s3.amazonaws.com/screenshots/install_gc.png)
 
 #### Cloudformation Template for IAM User Creation
 Here is the Cloudformation template used for this IAM Role Creation : https://github.com/amiracle/grand_central/blob/master/cf_templates/GC_StackSet_UserCreate_CFTemplate.json 
