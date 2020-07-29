@@ -8,6 +8,10 @@ Amazon Web Services
 **Requirements**
 Grand Central works with the **AWS Organizations framework** and does not require either Landing Zone or Control Tower to work. By having the organization setup with multiple accounts, Grand Central will be able to discover the accounts and add into management within Splunk.
 Please refer to the Amazon Web Services documentation on [how to get started with Organizations](https://aws.amazon.com/premiumsupport/knowledge-center/get-started-organizations/).
+
+#### Architecture
+![architecture](https://grandcentraldeployment.s3.amazonaws.com/architecture/Control+Tower+Marketplace+offering+-+Account+Vend+_+OU+Placement.png)
+
 #### Before Deploying Grand Central
 You will need to be able to create an IAM User in the Master Account and the sub accounts that will be added into management under Splunk. By default there will be two IAM policies created, one to list all the accounts in the Organization and the second will be a deployment policy.
 
