@@ -47,7 +47,16 @@ Here is the policy which it will deploy for reference:
                 "cloudformation:CreateStackInstances",
                 "cloudformation:DeleteStackInstances"
             ],
-            "Resource": "arn:aws:cloudformation:*:*:stackset/grandcentral*"
+            "Resource": [
+                "arn:aws:cloudformation:*:*:stackset-target/grandcentral*",
+                "arn:aws:cloudformation:*:*:stackset/grandcentral*",
+                "arn:aws:cloudformation:*::type/resource/AWS-IAM-Role",
+                "arn:aws:cloudformation:*::type/resource/AWS-S3-Bucket",
+                "arn:aws:cloudformation:*::type/resource/AWS-Lambda-Function",
+                "arn:aws:cloudformation:*::type/resource/AWS-KinesisFirehose-DeliveryStream",
+                "arn:aws:cloudformation:*::type/resource/AWS-IAM-Policy",
+                "arn:aws:cloudformation:*::type/resource/AWS-Events-Rule"
+            ]
         },
         {
             "Sid": "CFTemplateCreateStackSet",
@@ -56,7 +65,15 @@ Here is the policy which it will deploy for reference:
                 "cloudformation:CreateStackSet",
                 "cloudformation:DeleteStackSet"
             ],
-            "Resource": "arn:aws:cloudformation:*:*:stackset/grandcentral*"
+            "Resource": [
+                "arn:aws:cloudformation:*:*:stackset/grandcentral*",
+                "arn:aws:cloudformation:*::type/resource/AWS-IAM-Role",
+                "arn:aws:cloudformation:*::type/resource/AWS-S3-Bucket",
+                "arn:aws:cloudformation:*::type/resource/AWS-Lambda-Function",
+                "arn:aws:cloudformation:*::type/resource/AWS-KinesisFirehose-DeliveryStream",
+                "arn:aws:cloudformation:*::type/resource/AWS-IAM-Policy",
+                "arn:aws:cloudformation:*::type/resource/AWS-Events-Rule"
+            ]
         },
         {
             "Sid": "OrganizationList",
