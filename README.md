@@ -26,7 +26,7 @@ IAM Role Creation Shortcut (Simplified)
 3. Copy the Access Key / Secret Key from CloudFormation Output :
 ![copy_ak_sk](https://grandcentraldeployments.s3.amazonaws.com/screenshots/gcuser01.png)
 
-4. Download [grand_central_202.spl](https://grandcentraldeployments.s3.amazonaws.com/grand_central_300.spl) file from S3 bucket and install on your Splunk instance. Splunk Cloud customers request to have the app installed. 
+4. Download [grand_central_300.spl](https://grandcentraldeployments.s3.amazonaws.com/grand_central_300.spl) file from S3 bucket and install on your Splunk instance. Splunk Cloud customers request to have the app installed. 
 ![install_gc](https://grandcentraldeployments.s3.amazonaws.com/screenshots/install_gc.png)
 
 #### Cloudformation Template for IAM User Creation
