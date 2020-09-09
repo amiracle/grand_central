@@ -134,7 +134,7 @@ Add the Master Account ID (must be a number) access key / secret key to Splunk:
 
 The Master Account should now show up in Splunk:
 
-![master_account](https://grandcentraldeploymentss.s3.amazonaws.com/screenshots/gc2_03.png)
+![master_account](https://grandcentraldeployments.s3.amazonaws.com/screenshots/gc2_03.png)
 
 Once the Master Account has been added, now you should be able to view the accounts in the organization. Under Actions, navigate to the List All Accounts in the dropdown:
 ![master_account](https://grandcentraldeployments.s3.amazonaws.com/screenshots/gc2_04.png)
