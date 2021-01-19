@@ -2,9 +2,9 @@
 ## Manage and Monitor your Cloud Data Providers in Splunk from one centralized data platform.
 > This Splunk based app relies on the work done by Project Trumpet and the AWS Organizational model.
 ### Grand Central User's Guide :
-* Version 3.0.0
+* Version 3.0.1
 #### Getting Started
-Amazon Web Services
+
 **Requirements**
 Grand Central works with the **AWS Organizations framework** and does not require either Landing Zone or Control Tower to work. By having the organization setup with multiple accounts, Grand Central will be able to discover the accounts and add into management within Splunk.
 Please refer to the Amazon Web Services documentation on [how to get started with Organizations](https://aws.amazon.com/premiumsupport/knowledge-center/get-started-organizations/).
@@ -30,7 +30,7 @@ IAM Role Creation Shortcut (Simplified)
 ![install_gc](https://grandcentraldeployments.s3.amazonaws.com/screenshots/install_gc.png)
 
 #### Cloudformation Template for IAM User Creation
-Here is the Cloudformation template used for this IAM Role Creation : https://github.com/amiracle/grand_central/blob/master/cf_templates/GC_StackSet_UserCreate_CFTemplate.json 
+Here is the Cloudformation template used for this IAM Role Creation : https://github.com/amiracle/grand_central/blob/master/aws_artifacts/cf_templates/GC_StackSet_UserCreate_CFTemplateRev2.json
 
 Here is the policy which it will deploy for reference: 
 
@@ -116,7 +116,7 @@ Use this policy to setup and deploy Grand Central in a Control Tower / AWS Organ
 Individual Account IAM Policy (Optional)
 > If you are going to use individual accounts and policies in each account, use this IAM policy. 
 > Grand Central Policy for Individual AWS Accounts :
-> [Grand_Central_IAM_Policy.json](https://github.com/amiracle/grand_central/blob/master/Grand_Central_IAM_Policy.json)
+> [Grand_Central_IAM_Policy.json](https://github.com/amiracle/grand_central/blob/master/aws_artifacts/IAM_Policy/Grand_Central_IAM_Policy.json)
 
 ### Setting up Grand Central
 
@@ -190,3 +190,24 @@ In the Observation Deck dashboard you will see the successfully deployed Account
     ## Terraform
     - Binary and Checksum: https://releases.hashicorp.com/terraform/0.12.19/
     - Source Code: https://github.com/hashicorp/terraform
+    
+#### Alternative deployments
+
+Under the hood, Grand Central is simply storing account configurations and deploying Stacksets/CloudFormation templates to those accounts, however the state and persistence of the Stackset/Cloudformation stack itself is stored within the AWS services. It is therefore possible to deploy the same architecture deployed by Grand Central using the native Stacket/Cloudformation consoles and CLI tools to better match any existing IaaS workflows you may already be using. 
+
+This section will briefly describe how to manually deploy the same architecture as Grand Central. This is especially relevant for users with concerns about long term storage of account credentials. Note that this section will be describing how to manually deploy to an AWS Organization using Stacksets, rather than individual accounts using Cloudformation. To deploy customized data collection Cloudformation templates to individual AWS accounts without Grand Central, please see [Project Trumpet](https://github.com/splunk/splunk-aws-project-trumpet).
+
+There are two main options for deploying the data collection infrastructure set up by Grand Central without relying on the Grand Central app for management of the stacks. 
+
+* Follow all the same steps as deploying Grand Central to an AWS Organization (Create and provide a Master Account credential, add accounts in the organization to Grand Central, then deploy one or more Stacksets to the relevant Organizational Units (OUs) and regions). 
+    * Once this is complete, you can safely remove the Master Account from Grand Central, delete the Master Account user/credential, and even uninstall the Grand Central app. The data collection deployment created by Grand Central will still exist after the app is uninstalled or the Master account credential is deleted. 
+    * Be sure to note the name of the Stackset deployment. 
+    * To edit or roll back the deployment, you will need to interact with the Stackset in the AWS console. 
+    * In this approach, Grand Central is used as a quickstart for deployment, and long term management/maintenance is done within native AWS services.
+
+* Instead of deploying the Stackset through Grand Central, you can instead manually deploy the same Stackset within the AWS Console or through the AWS CLI. This is a straightforward process, which will be described in more detail here. 
+	* The first step will be to create a template using Project Trumpet, this template should be deployable to all accounts and regions that you plan to deploy to, meaning that if CloudWatch Log or VPC Flow log groups are provided, they must exist (have the same name) in each account/region that the Stackset will deploy the template to. Services like CloudTrail exist in all regions/accounts and can be included. 
+
+	* The next step is to deploy the template using AWS Stacksets in the Master Account with trusted access enabled, from here, you can select which Organization Units (OUs) you would like the template to apply to, as well as regions.
+
+	* Note that Grand Central deploys using the assumption that the Master Account has trusted access enabled, this allows the master account to deploy the Stackset to accounts within the organization without having to configure trust policies for each account. See more about this approach [here](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-enable-trusted-access.html).
