@@ -1,18 +1,23 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                      "organizations:List*",
-                      "organizations:EnableAWSServiceAccess",
-                      "organizations:DescribeOrganization",
-                      "organizations:DescribeOrganizationalUnit",
-                      "cloudformation:CreateStackSet",
-                      "cloudformation:CreateStackInstances"
-            ],
-            "Resource": "*"
-        }
-    ]
+  "Statement": [
+    {
+      "Action": [
+        "organizations:List*",
+        "organizations:EnableAWSServiceAccess",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit"
+      ],
+      "Resource": "*",
+      "Effect": "Allow",
+      "Sid": "GCSplunkStackSet1"
+    },
+    {
+      "Action": [
+        "cloudformation:*"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:stackset/grandcentral*",
+      "Effect": "Allow",
+      "Sid": "GCSplunkStackSet2"
+    }
+  ]
 }
